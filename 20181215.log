@@ -1,0 +1,69 @@
+2019-07-07 18:09:11.469  INFO 11782 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication on wang-N8xxEP6 with PID 11782 (/home/wang/IdeaProjects/demo/target/classes started by wang in /home/wang/IdeaProjects/demo)
+2019-07-07 18:09:11.471  INFO 11782 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2019-07-07 18:09:12.278  WARN 11782 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2019-07-07 18:09:12.583  INFO 11782 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-07-07 18:09:12.595  INFO 11782 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-07 18:09:12.595  INFO 11782 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-07 18:09:12.636  INFO 11782 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-07 18:09:12.636 DEBUG 11782 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-07-07 18:09:12.636  INFO 11782 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1086 ms
+2019-07-07 18:09:12.689 DEBUG 11782 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-07-07 18:09:12.759  INFO 11782 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-07 18:09:12.766 DEBUG 11782 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-07-07 18:09:12.794 DEBUG 11782 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 3 mappings in 'requestMappingHandlerMapping'
+2019-07-07 18:09:12.801 DEBUG 11782 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-07-07 18:09:12.806 DEBUG 11782 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-07-07 18:09:12.819  WARN 11782 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-07-07 18:09:13.243  INFO 11782 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-07 18:09:13.245  INFO 11782 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 2.316 seconds (JVM running for 3.474)
+2019-07-07 18:11:07.411  INFO 11782 --- [Thread-6] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-07 18:11:15.658  INFO 12169 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication on wang-N8xxEP6 with PID 12169 (/home/wang/IdeaProjects/demo/target/classes started by wang in /home/wang/IdeaProjects/demo)
+2019-07-07 18:11:15.659  INFO 12169 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2019-07-07 18:11:16.062  WARN 12169 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2019-07-07 18:11:16.430  INFO 12169 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-07-07 18:11:16.443  INFO 12169 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-07 18:11:16.443  INFO 12169 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-07 18:11:16.493  INFO 12169 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-07 18:11:16.494 DEBUG 12169 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-07-07 18:11:16.494  INFO 12169 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 804 ms
+2019-07-07 18:11:16.547 DEBUG 12169 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-07-07 18:11:16.609  INFO 12169 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-07 18:11:16.615 DEBUG 12169 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-07-07 18:11:16.640 DEBUG 12169 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 3 mappings in 'requestMappingHandlerMapping'
+2019-07-07 18:11:16.647 DEBUG 12169 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-07-07 18:11:16.653 DEBUG 12169 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-07-07 18:11:16.664  WARN 12169 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-07-07 18:11:16.991  INFO 12169 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-07 18:11:16.994  INFO 12169 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 1.538 seconds (JVM running for 1.848)
+2019-07-07 18:17:01.300  INFO 12169 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-07 18:17:36.953  INFO 12444 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication on wang-N8xxEP6 with PID 12444 (/home/wang/IdeaProjects/demo/target/classes started by wang in /home/wang/IdeaProjects/demo)
+2019-07-07 18:17:36.954  INFO 12444 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2019-07-07 18:17:37.339  WARN 12444 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.demo]' package. Please check your configuration.
+2019-07-07 18:17:37.686  INFO 12444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-07-07 18:17:37.704  INFO 12444 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-07-07 18:17:37.704  INFO 12444 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-07-07 18:17:37.769  INFO 12444 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-07-07 18:17:37.769 DEBUG 12444 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-07-07 18:17:37.769  INFO 12444 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 791 ms
+2019-07-07 18:17:37.836 DEBUG 12444 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-07-07 18:17:37.925  INFO 12444 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-07 18:17:37.932 DEBUG 12444 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-07-07 18:17:37.963 DEBUG 12444 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 3 mappings in 'requestMappingHandlerMapping'
+2019-07-07 18:17:37.970 DEBUG 12444 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-07-07 18:17:37.977 DEBUG 12444 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-07-07 18:17:37.991  WARN 12444 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-07-07 18:17:38.313  INFO 12444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-07-07 18:17:38.315  INFO 12444 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 1.561 seconds (JVM running for 1.918)
+2019-07-07 18:19:29.094  INFO 12444 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-07-07 18:19:29.094  INFO 12444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-07-07 18:19:29.094 DEBUG 12444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2019-07-07 18:19:29.097 DEBUG 12444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-07-07 18:19:29.097  INFO 12444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2019-07-07 18:19:29.133 DEBUG 12444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/first", parameters={}
+2019-07-07 18:19:29.135 DEBUG 12444 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.lang.String com.example.demo.controller.FirstController.first()
+2019-07-07 18:19:29.146 DEBUG 12444 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/html', given [text/html, application/xhtml+xml, application/xml;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2019-07-07 18:19:29.147 DEBUG 12444 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing ["first"]
+2019-07-07 18:19:29.150 DEBUG 12444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-07-07 18:19:29.160 DEBUG 12444 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/favicon.ico", parameters={}
+2019-07-07 18:19:29.161 DEBUG 12444 --- [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], ServletContext resource [/], class path resource []]
+2019-07-07 18:19:29.169 DEBUG 12444 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
