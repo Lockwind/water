@@ -6,5 +6,7 @@ public class b {
     private int ii;
     private int aa;
     private int ak;
+    private int sk;
+
 }
-}
+
