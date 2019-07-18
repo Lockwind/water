@@ -15,10 +15,10 @@ public class JWTutil {
     //过期时间
     private static final long OVERTIME=60*1000;
     //秘钥
-    private static final String CIPHER="jjjjjjj";
+    private static final String CIPHER="jjjjjjjjj";
 
     //此为获得token
-    public static String getToken(String userid) {
+    public static String getToken(Integer userid) {
         try {
             //获得时间,这个时间指该token过期时间
             Timestamp time = new Timestamp(System.currentTimeMillis() + OVERTIME);
@@ -50,4 +50,15 @@ public class JWTutil {
             return false;
         }
     }
+
+   public static int getId(String token){
+        try {
+            Algorithm algorithm = Algorithm.HMAC256(CIPHER);
+            JWTVerifier verifier = JWT.require(algorithm).build();
+            DecodedJWT jwt = verifier.verify(token);
+            return jwt.getClaims().get("userid").asInt();
+        }catch (Exception e){
+            return 0;
+        }
+   }
 }

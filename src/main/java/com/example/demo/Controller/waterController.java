@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 import java.sql.Timestamp;
 import java.time.LocalDate;
@@ -28,11 +29,11 @@ public class waterController {
     public String Login(String LoginInfo){
         Map<String,String> info=JSONObject.fromObject(LoginInfo);
         Integer uid=userService.signin(new User(info.get("uName"),info.get("uPwd")));
-        return uid==null?null:JWTutil.getToken(uid.toString());
+        return uid==null?"请求失败":JWTutil.getToken(uid);
     }
 
     @RequestMapping("/")
-    public String add(){
-        return "成功";
+    public int add(HttpServletRequest request){
+        return JWTutil.getId(request.getHeader("token"));
     }
 }
