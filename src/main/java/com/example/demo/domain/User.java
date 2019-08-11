@@ -9,8 +9,19 @@ public class User {
 
     private Integer userid;
     private String username;
+    private Integer pId;
+    private String part;
     private String userpwd;
     private String devicetoken;
+
+    public String getPart() {
+        return part;
+    }
+
+    public void setPart(String part) {
+        this.part = part;
+    }
+
 
     public User() {
     }
@@ -18,6 +29,14 @@ public class User {
     public User(String username, String userpwd) {
         this.username = username;
         this.userpwd = userpwd;
+    }
+
+    public Integer getpId() {
+        return pId;
+    }
+
+    public void setpId(Integer pId) {
+        this.pId = pId;
     }
 
     public User(String username, String userpwd, String devicetoken) {
@@ -70,6 +89,7 @@ public class User {
         return "User{" +
                 "userid=" + userid +
                 ", username='" + username + '\'' +
+                ", pId=" + pId +
                 ", userpwd='" + userpwd + '\'' +
                 ", devicetoken='" + devicetoken + '\'' +
                 '}';

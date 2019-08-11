@@ -2,6 +2,7 @@ package com.example.demo;
 
 import com.example.demo.dao.Userdao;
 import com.example.demo.domain.User;
+import com.example.demo.util.userTokenUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class DemoApplicationTests {
 
     @Test
     public void contextLoads() {
-        System.out.println(userdao.Login(new User("宁","123456",null)));
+        System.out.println(userTokenUtil.getToken("654321"));
     }
 
 }
