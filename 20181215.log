@@ -4620,3 +4620,56 @@ java.lang.NullPointerException: null
 2019-08-10 22:55:19.712  INFO 21610 --- [Thread-6] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
 2019-08-10 22:55:19.712  INFO 21610 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2019-08-10 22:55:19.717  INFO 21610 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-08-10 23:21:32.081  INFO 24944 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication on lv-computer with PID 24944 (/home/lvxin/IdeaProjects/watermanager/target/classes started by lvxin in /home/lvxin/IdeaProjects/watermanager)
+2019-08-10 23:21:32.084  INFO 24944 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2019-08-10 23:21:33.089  INFO 24944 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-08-10 23:21:33.105  INFO 24944 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-10 23:21:33.106  INFO 24944 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-10 23:21:33.170  INFO 24944 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-10 23:21:33.170 DEBUG 24944 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-08-10 23:21:33.171  INFO 24944 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1049 ms
+2019-08-10 23:21:33.655  INFO 24944 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-10 23:21:33.696 DEBUG 24944 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-08-10 23:21:33.777 DEBUG 24944 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-08-10 23:21:33.807 DEBUG 24944 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 7 mappings in 'requestMappingHandlerMapping'
+2019-08-10 23:21:33.817 DEBUG 24944 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-08-10 23:21:33.823 DEBUG 24944 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-08-10 23:21:33.837  WARN 24944 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-08-10 23:21:34.049  INFO 24944 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-10 23:21:34.051  INFO 24944 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 2.216 seconds (JVM running for 2.582)
+2019-08-10 23:22:10.127  INFO 24944 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-10 23:22:10.127  INFO 24944 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-08-10 23:22:10.127 DEBUG 24944 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2019-08-10 23:22:10.134 DEBUG 24944 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-08-10 23:22:10.135  INFO 24944 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2019-08-10 23:22:10.148 DEBUG 24944 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/monitor", parameters={}
+2019-08-10 23:22:10.153 DEBUG 24944 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.lang.String com.example.demo.Controller.waterController.monitor(java.util.Map<java.lang.String, java.lang.String>)
+2019-08-10 23:22:10.155 DEBUG 24944 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-08-10 23:22:23.351 DEBUG 24944 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/monitor?map=%7B%22test%22:%22123456%22%7D", parameters={masked}
+2019-08-10 23:22:23.352 DEBUG 24944 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.lang.String com.example.demo.Controller.waterController.monitor(java.util.Map<java.lang.String, java.lang.String>)
+2019-08-10 23:22:23.352 DEBUG 24944 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-08-10 23:22:27.839 DEBUG 24944 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/login?logininfo=%7B%22Username%22:%22%E6%96%87%E5%BA%84%22,%22Password%22:%22654321%22%7D", parameters={masked}
+2019-08-10 23:22:27.840 DEBUG 24944 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.lang.String com.example.demo.Controller.waterController.Login(java.lang.String)
+2019-08-10 23:22:27.868  INFO 24944 --- [http-nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-08-10 23:22:27.959  INFO 24944 --- [http-nio-8080-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-08-10 23:22:27.995 DEBUG 24944 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2019-08-10 23:22:27.995 DEBUG 24944 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing ["{"Code":1,"Msg":"success","Date":{"token":"Mi8xNTY1NDkzNzQ3OTc4","role":"root","userid":2}}"]
+2019-08-10 23:22:27.999 DEBUG 24944 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-08-10 23:22:44.933 DEBUG 24944 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/monitor?map=%7B%22test%22:%22123456%22%7D", parameters={masked}
+2019-08-10 23:22:44.933 DEBUG 24944 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.lang.String com.example.demo.Controller.waterController.monitor(java.util.Map<java.lang.String, java.lang.String>)
+2019-08-10 23:22:44.934 DEBUG 24944 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2019-08-10 23:22:44.934 DEBUG 24944 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
+2019-08-10 23:22:44.934 DEBUG 24944 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-08-10 23:23:26.755 DEBUG 24944 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/monitor?map=%7B%22test%22:%22123456%22%7D", parameters={masked}
+2019-08-10 23:23:26.756 DEBUG 24944 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.lang.String com.example.demo.Controller.waterController.monitor(java.util.Map<java.lang.String, java.lang.String>)
+2019-08-10 23:23:26.757 DEBUG 24944 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2019-08-10 23:23:26.757 DEBUG 24944 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
+2019-08-10 23:23:26.757 DEBUG 24944 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-08-10 23:23:35.598 DEBUG 24944 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/monitor?map=%7B%22test%22:%22123456%22%7D", parameters={masked}
+2019-08-10 23:23:35.598 DEBUG 24944 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public java.lang.String com.example.demo.Controller.waterController.monitor(java.util.Map<java.lang.String, java.lang.String>)
+2019-08-10 23:23:35.599 DEBUG 24944 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2019-08-10 23:23:35.599 DEBUG 24944 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
+2019-08-10 23:23:35.599 DEBUG 24944 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-08-10 23:42:43.914  INFO 24944 --- [Thread-6] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-10 23:42:43.915  INFO 24944 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-08-10 23:42:43.920  INFO 24944 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

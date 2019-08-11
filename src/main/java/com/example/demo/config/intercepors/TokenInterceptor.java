@@ -7,6 +7,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+//拦截器 负责检查token
 @Component
 public class TokenInterceptor implements HandlerInterceptor {
 
@@ -16,9 +17,12 @@ public class TokenInterceptor implements HandlerInterceptor {
         //获得请求头中的token
         String token=(String)request.getHeader("Token");
         if (token!=null){
+            //取出id
             String userid=userTokenUtil.getStr(token).split("/")[0];
+            //按id取出共有map的Token
             String thistoken=userTokenUtil.Users.get(Integer.parseInt(userid));
             if (thistoken!=null) {
+                //比对token
                 if (thistoken.equals(token)) {
                     return true;
                 }
