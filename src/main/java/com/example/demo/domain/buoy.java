@@ -4,6 +4,7 @@ public class buoy {
     private Integer bId;
     private Double PH;
     private Integer Wen;
+    private Integer sss;
 
 
     @Override
