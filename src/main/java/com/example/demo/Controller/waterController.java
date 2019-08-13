@@ -9,10 +9,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestAttribute;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -24,53 +21,49 @@ public class waterController {
     @Autowired
     userService userService;
 
-    private Map<String,String> toMap(String str){
-        return new Gson().fromJson(str,new TypeToken<Map<String,String>>(){}.getType());
-    }
-
     @RequestMapping("/login")
-    public String Login(String logininfo){
+    public Message<loginMsg> Login(String logininfo){
         //将json转为map
-        Map<String,String> userinfo=toMap(logininfo);
+        User userinfo=new Gson().fromJson(logininfo,User.class);
         //按名字查用户
-        User user=userService.signin(userinfo.get("Username"));
+        User user=userService.signin(userinfo.getUsername());
         if (user!=null) {
             //将logininfo中密码与数据库密码进行比对
-            if (userTokenUtil.getStr(user.getUserpwd()).equals(userinfo.get("Password"))) {
+            if (userTokenUtil.getStr(user.getUserpwd()).equals(userinfo.getUserpwd())) {
                 //创建token
                 String token=userTokenUtil.getToken(user.getUserid()+"/"+ System.currentTimeMillis());
                 //将userid和token存入一个共有的map
                 userTokenUtil.Users.put(user.getUserid(),token);
-                return new Gson().toJson(new Message<loginMsg>(1,"success",new loginMsg(token,user.getPart(),user.getUserid())));
+                return new Message<loginMsg>(1,"success",new loginMsg(token,user.getPart(),user.getUserid()));
             } else {
-                return new Gson().toJson(new Message<>(0, "密码错误", null));
+                return new Message<>(0, "密码错误", null);
             }
         }else {
-            return new Gson().toJson(new Message<>(0,"用户不存在",null));
+            return new Message<>(0,"用户不存在",null);
         }
     }
 
-    @RequestMapping("/monitor")
-    public String monitor(String Token){
+    @RequestMapping(value = "/monitor")
+    public String monitor(){
         return "";
     }
 
     @RequestMapping("/login_out")
-    public String login_out(String Token){
+    public Message login_out(String Token){
         //从token中取得用户id
         int uId=Integer.parseInt(userTokenUtil.getStr(Token).split("/")[0]);
         //在共有map中移除token和id
         if (userTokenUtil.Users.remove(uId,Token)){
-            return new Gson().toJson(new Message<>(1,"success",null));
+            return new Message<>(1,"success",null);
         }else {
-            return new Gson().toJson(new Message<>(0,"退出错误",null));
+            return new Message<>(0,"退出错误",null);
         }
     }
 
     @RequestMapping("/change_pwd")
-    public String change_pwd(String changeInfo) {
+    public Message change_pwd(String changeInfo) {
         //json转为map
-        Map<String, String> info = toMap(changeInfo);
+        Map<String, String> info = new Gson().fromJson(changeInfo,new TypeToken<Map<String,String>>(){}.getType());
         Integer userid = Integer.parseInt(info.get("Userid"));
         String old_pwd = info.get("Old_pwd");
         String new_pwd = info.get("New_pwd");
@@ -84,20 +77,20 @@ public class waterController {
             if (u.getUserpwd().equals(old_pwd)){
                 //更新密码
                 if (userService.updatepwd(user)) {
-                    return new Gson().toJson(new Message<>(1, "success", null));
+                    return new Message<>(1, "success", null);
                 } else {
-                   return new Gson().toJson(new Message<>(0, "更改失败", null));
+                   return new Message<>(0, "更改失败", null);
                 }
             }else {
-                return new Gson().toJson(new Message<>(0, "密码错误", null));
+                return new Message<>(0, "密码错误", null);
             }
         }else {
-            return new Gson().toJson(new Message<>(0, "用户id不存在", null));
+            return new Message<>(0, "用户id不存在", null);
         }
     }
 
     @RequestMapping("/list_users")
-    public String list_users(String Token){
+    public Message<List<User>> list_users(String Token){
         int uId=Integer.parseInt(userTokenUtil.getStr(Token).split("/")[0]);
         //取出id
         User user=userService.signin(uId);
@@ -105,12 +98,12 @@ public class waterController {
             //比对用户身份
             if (user.getPart().equals("root") || user.getPart().equals("admin")) {
                 //返回所有用户
-                return new Gson().toJson(new Message<List<User>>(1, "success", userService.selectAll()));
+                return new Message<List<User>>(1, "success", userService.selectAll());
             } else {
-                return new Gson().toJson(new Message<>(0, "无权访问", null));
+                return new Message<>(0, "无权访问", null);
             }
         }else {
-            return new Gson().toJson(new Message<>(0, "无此用户", null));
+            return new Message<>(0, "无此用户", null);
         }
     }
 }
