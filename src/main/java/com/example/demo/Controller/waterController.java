@@ -7,11 +7,10 @@ import com.example.demo.response.loginMsg;
 import com.example.demo.util.userTokenUtil;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import net.sf.json.JSONObject;
+import org.omg.CORBA.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.Timestamp;
 import java.util.List;
 import java.util.Map;
 
@@ -52,6 +51,7 @@ public class waterController {
     public Message login_out(String Token){
         //从token中取得用户id
         int uId=Integer.parseInt(userTokenUtil.getStr(Token).split("/")[0]);
+        System.out.println(uId);
         //在共有map中移除token和id
         if (userTokenUtil.Users.remove(uId,Token)){
             return new Message<>(1,"success",null);

@@ -3,17 +3,23 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.dao.Userdao">
-    <resultMap id="userResult" type="user">
+    <resultMap id="userResult" type="com.example.demo.domain.User">
         <id column="uId" property="userid"></id>
         <result column="uName" property="username"></result>
         <result column="uPwd" property="userpwd"></result>
         <result column="pId" property="pId"></result>
     </resultMap>
     <select id="selectbyName" parameterType="java.lang.String" resultMap="userResult">
-        select uId,uName,uPwd,User.pId,p.pName part from User inner join part p on User.pId = p.pId where uName=#{uName};
+         select uId,uName,uPwd,p.pId,p.pName from User
+            inner join part p
+                on User.uId = p.pId
+                    where uName=#{uName};
     </select>
     <select id="selectbyId" parameterType="java.lang.Integer" resultMap="userResult">
-        select uId,uName,uPwd,User.pId,p.pName part from User inner join part p on User.pId = p.pId where uId=#{uId};
+        select uId,uName,uPwd,User.pId,p.pName part from User
+        inner join part p
+        on User.pId = p.pId
+        where uId=#{uId};
     </select>
     <update id="updatepwd" parameterType="user">
      update User set uPwd=#{userpwd} where uId=#{userid}

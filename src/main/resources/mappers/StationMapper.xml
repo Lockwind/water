@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.StationDao">
+        <resultMap id="StationResultMap" type="com.example.demo.domain.station">
+            <id property="sId" column="s_id"/>
+            <result property="sRainfall" column="s_rainfall"/>
+            <result property="sAirTemperature" column="s_airTemperature"/>
+            <result property="sPressure" column="s_pressure"/>
+            <result property="sRelativeHumidity" column="s_relativeHumidity"/>
+            <result property="sCumulativeRainfall" column="s_cumulativeRainfall"/>
+            <result property="sAverageWindSpeed" column="s_averageWindSpeed"/>
+            <result property="sAverageWindDirection" column="s_averageWindDirection"/>
+            <result property="sTime" column="s_time"/>
+        </resultMap>
+    <!--<select id="findB" resultMap="BuoyResultMap">
+         select * from buoy order by bId desc limit 1;
+    </select>-->
+
+    <select id="findByNewTime" resultMap="StationResultMap" parameterType="java.time.LocalDateTime">
+            SELECT * from station where station.s_time=(select max(station.s_time) from station);
+    </select>
+</mapper>
