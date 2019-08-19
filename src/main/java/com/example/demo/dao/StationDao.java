@@ -7,6 +7,7 @@ import java.util.List;
 @Mapper
 public interface StationDao {
 
+    /*最新查询*/
     List<station> findByNewTime();
 
 }
