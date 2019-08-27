@@ -4,38 +4,45 @@ import java.time.LocalDateTime;
 
 public class station {
     private int sId;
-    private double  sRainfall;
-    private double  sAirTemperature;
-    private double  sPressure;
-    private double  sRelativeHumidity;
-    private double  sCumulativeRainfall;
-    private double  sAverageWindSpeed;
-    private double  sAverageWindDirection;
-    private LocalDateTime  sTime;
+    private float  s1;
+    private float  s2;
+    private float  s3;
+    private float  s4;
+    private float  s5;
+    private float  s6;
+    private float  s7;
+    private float  s8;
+    private float  s9;
+    private LocalDateTime sTime;
 
     public station() {
+
     }
 
-    public station(double sRainfall, double sAirTemperature, double sPressure, double sRelativeHumidity, double sCumulativeRainfall, double sAverageWindSpeed, double sAverageWindDirection, LocalDateTime sTime) {
-        this.sRainfall = sRainfall;
-        this.sAirTemperature = sAirTemperature;
-        this.sPressure = sPressure;
-        this.sRelativeHumidity = sRelativeHumidity;
-        this.sCumulativeRainfall = sCumulativeRainfall;
-        this.sAverageWindSpeed = sAverageWindSpeed;
-        this.sAverageWindDirection = sAverageWindDirection;
+    public station(float s1, float s2, float s3, float s4, float s5, float s6, float s7, float s8, float s9, LocalDateTime sTime) {
+        this.s1 = s1;
+        this.s2 = s2;
+        this.s3 = s3;
+        this.s4 = s4;
+        this.s5 = s5;
+        this.s6 = s6;
+        this.s7 = s7;
+        this.s8 = s8;
+        this.s9 = s9;
         this.sTime = sTime;
     }
 
-    public station(int sId, double sRainfall, double sAirTemperature, double sPressure, double sRelativeHumidity, double sCumulativeRainfall, double sAverageWindSpeed, double sAverageWindDirection, LocalDateTime sTime) {
+    public station(int sId, float s1, float s2, float s3, float s4, float s5, float s6, float s7, float s8, float s9, LocalDateTime sTime) {
         this.sId = sId;
-        this.sRainfall = sRainfall;
-        this.sAirTemperature = sAirTemperature;
-        this.sPressure = sPressure;
-        this.sRelativeHumidity = sRelativeHumidity;
-        this.sCumulativeRainfall = sCumulativeRainfall;
-        this.sAverageWindSpeed = sAverageWindSpeed;
-        this.sAverageWindDirection = sAverageWindDirection;
+        this.s1 = s1;
+        this.s2 = s2;
+        this.s3 = s3;
+        this.s4 = s4;
+        this.s5 = s5;
+        this.s6 = s6;
+        this.s7 = s7;
+        this.s8 = s8;
+        this.s9 = s9;
         this.sTime = sTime;
     }
 
@@ -47,60 +54,76 @@ public class station {
         this.sId = sId;
     }
 
-    public double getsRainfall() {
-        return sRainfall;
+    public float getS1() {
+        return s1;
     }
 
-    public void setsRainfall(double sRainfall) {
-        this.sRainfall = sRainfall;
+    public void setS1(float s1) {
+        this.s1 = s1;
     }
 
-    public double getsAirTemperature() {
-        return sAirTemperature;
+    public float getS2() {
+        return s2;
     }
 
-    public void setsAirTemperature(double sAirTemperature) {
-        this.sAirTemperature = sAirTemperature;
+    public void setS2(float s2) {
+        this.s2 = s2;
     }
 
-    public double getsPressure() {
-        return sPressure;
+    public float getS3() {
+        return s3;
     }
 
-    public void setsPressure(double sPressure) {
-        this.sPressure = sPressure;
+    public void setS3(float s3) {
+        this.s3 = s3;
     }
 
-    public double getsRelativeHumidity() {
-        return sRelativeHumidity;
+    public float getS4() {
+        return s4;
     }
 
-    public void setsRelativeHumidity(double sRelativeHumidity) {
-        this.sRelativeHumidity = sRelativeHumidity;
+    public void setS4(float s4) {
+        this.s4 = s4;
     }
 
-    public double getsCumulativeRainfall() {
-        return sCumulativeRainfall;
+    public float getS5() {
+        return s5;
     }
 
-    public void setsCumulativeRainfall(double sCumulativeRainfall) {
-        this.sCumulativeRainfall = sCumulativeRainfall;
+    public void setS5(float s5) {
+        this.s5 = s5;
     }
 
-    public double getsAverageWindSpeed() {
-        return sAverageWindSpeed;
+    public float getS6() {
+        return s6;
     }
 
-    public void setsAverageWindSpeed(double sAverageWindSpeed) {
-        this.sAverageWindSpeed = sAverageWindSpeed;
+    public void setS6(float s6) {
+        this.s6 = s6;
     }
 
-    public double getsAverageWindDirection() {
-        return sAverageWindDirection;
+    public float getS7() {
+        return s7;
     }
 
-    public void setsAverageWindDirection(double sAverageWindDirection) {
-        this.sAverageWindDirection = sAverageWindDirection;
+    public void setS7(float s7) {
+        this.s7 = s7;
+    }
+
+    public float getS8() {
+        return s8;
+    }
+
+    public void setS8(float s8) {
+        this.s8 = s8;
+    }
+
+    public float getS9() {
+        return s9;
+    }
+
+    public void setS9(float s9) {
+        this.s9 = s9;
     }
 
     public LocalDateTime getsTime() {
@@ -115,13 +138,15 @@ public class station {
     public String toString() {
         return "station{" +
                 "sId=" + sId +
-                ", sRainfall=" + sRainfall +
-                ", sAirTemperature=" + sAirTemperature +
-                ", sPressure=" + sPressure +
-                ", sRelativeHumidity=" + sRelativeHumidity +
-                ", sCumulativeRainfall=" + sCumulativeRainfall +
-                ", sAverageWindSpeed=" + sAverageWindSpeed +
-                ", sAverageWindDirection=" + sAverageWindDirection +
+                ", s1=" + s1 +
+                ", s2=" + s2 +
+                ", s3=" + s3 +
+                ", s4=" + s4 +
+                ", s5=" + s5 +
+                ", s6=" + s6 +
+                ", s7=" + s7 +
+                ", s8=" + s8 +
+                ", s9=" + s9 +
                 ", sTime=" + sTime +
                 '}';
     }

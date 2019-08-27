@@ -4,21 +4,23 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.dao.StationDao">
         <resultMap id="StationResultMap" type="com.example.demo.domain.station">
-            <id property="sId" column="s_id"/>
-            <result property="sRainfall" column="s_rainfall"/>
-            <result property="sAirTemperature" column="s_airTemperature"/>
-            <result property="sPressure" column="s_pressure"/>
-            <result property="sRelativeHumidity" column="s_relativeHumidity"/>
-            <result property="sCumulativeRainfall" column="s_cumulativeRainfall"/>
-            <result property="sAverageWindSpeed" column="s_averageWindSpeed"/>
-            <result property="sAverageWindDirection" column="s_averageWindDirection"/>
-            <result property="sTime" column="s_time"/>
+            <id property="sId" column="id"/>
+            <result property="s1" column="S1"/>
+            <result property="s2" column="S2"/>
+            <result property="s3" column="S3"/>
+            <result property="s4" column="S4"/>
+            <result property="s5" column="S5"/>
+            <result property="s6" column="S6"/>
+            <result property="s7" column="S7"/>
+            <result property="s8" column="S8"/>
+            <result property="s9" column="S9"/>
+            <result property="sTime" column="time"/>
         </resultMap>
     <!--<select id="findB" resultMap="BuoyResultMap">
          select * from buoy order by bId desc limit 1;
     </select>-->
 
     <select id="findByNewTime" resultMap="StationResultMap" parameterType="java.time.LocalDateTime">
-            SELECT * from station where station.s_time=(select max(station.s_time) from station);
+            select * from station where water.station.time=(select max(water.station.time) from station);
     </select>
 </mapper>

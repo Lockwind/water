@@ -1,12 +1,12 @@
 package com.example.demo.Service;
 
-import com.example.demo.domain.User;
+import com.example.demo.domain.user;
 
 import java.util.List;
 
 public interface userService {
-    User signin(String uName);
-    User signin(Integer uId);
-    boolean updatepwd(User user);
-    List<User> selectAll();
+    user signin(String uName);
+    user signin(Integer uId);
+    boolean updatepwd(user user);
+    List<user> selectAll();
 }

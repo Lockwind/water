@@ -4,37 +4,37 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.dao.Buoydao">
         <resultMap id="BuoyResultMap" type="com.example.demo.domain.buoy">
-            <id property="bId" column="b_id"/>
-            <result property="bPH" column="b_PH"/>
-            <result property="bTotalSuspendedSolids" column="b_TotalSuspendedSolids"/>
-            <result property="bBOD" column="b_BOD"/>
-            <result property="bCOD" column="b_COD"/>
-            <result property="bTOC" column="b_TOC"/>
-            <result property="bAmmoniaNitrogen" column="b_ammoniaNitrogen"/>
-            <result property="bPhosphate" column="b_phosphate"/>
-            <result property="bWaterTemperature" column="b_waterTemperature"/>
-            <result property="bConductivity" column="b_conductivity"/>
-            <result property="bTurbidity" column="b_turbidity"/>
-            <result property="bDissolvedOxygen" column="b_dissolvedOxygen"/>
-            <result property="bPetroleum" column="b_petroleum"/>
-            <result property="bBlueGreenAlgae" column="b_blue_GreenAlgae"/>
-            <result property="bChlorophyll" column="b_chlorophyll"/>
-            <result property="bNitrateNitrogen" column="b_nitrateNitrogen"/>
-            <result property="bNitrousNitrogen" column="b_nitrousNitrogen"/>
-            <result property="bRainfall" column="b_rainfall"/>
-            <result property="bAirTemperature" column="b_airTemperature"/>
-            <result property="bPressure" column="b_pressure"/>
-            <result property="bRelativeHumidity" column="b_relativeHumidity"/>
-            <result property="bCumulativeRainfall" column="b_cumulativeRainfall"/>
-            <result property="bAverageWindSpeed" column="b_averageWindSpeed"/>
-            <result property="bAverageWindDirection" column="b_averageWindDirection"/>
-            <result property="bTime" column="b_time" javaType="java.time.LocalDateTime"/>
+            <id property="bId" column="id"/>
+            <result property="bTime" column="time" javaType="java.time.LocalDateTime"/>
+            <result property="bA0" column="b001"/>
+            <result property="bA1" column="b003"/>
+            <result property="bA2" column="b010"/>
+            <result property="bA3" column="b011"/>
+            <result property="bA4" column="b015"/>
+            <result property="bA5" column="b060"/>
+            <result property="bA6" column="bA00"/>
+            <result property="bA7" column="bA01"/>
+            <result property="bA8" column="bA02"/>
+            <result property="bA9" column="bA03"/>
+            <result property="bA10" column="bA04"/>
+            <result property="bA11" column="bA05"/>
+            <result property="bA12" column="bA06"/>
+            <result property="bA13" column="bA07"/>
+            <result property="bA14" column="bA08"/>
+            <result property="bA15" column="bA09"/>
+            <result property="bA16" column="bA10"/>
+            <result property="bA17" column="bA11"/>
+            <result property="bA18" column="bA12"/>
+            <result property="bA19" column="bA13"/>
+            <result property="bA20" column="bA14"/>
+            <result property="bA21" column="bA15"/>
+            <result property="bA22" column="bA16"/>
         </resultMap>
     <select id="findB" resultMap="BuoyResultMap">
-         select * from buoy order by bId desc limit 1;
+         select * from water.buoy order by id desc limit 1;
     </select>
 
     <select id="findByNewTime" resultMap="BuoyResultMap" parameterType="java.time.LocalDateTime">
-         SELECT * from buoy where buoy.b_time=(select max(buoy.b_time) from buoy);
+         select * from buoy where water.buoy.time=(select max(water.buoy.time) from buoy);
     </select>
 </mapper>

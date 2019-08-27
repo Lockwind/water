@@ -18,8 +18,8 @@ public class BuoyServiceImpl implements BuoyService {
     public buoy check() {
         buoy buoy=buoydao.findB().size()!=0?buoydao.findB().get(0):null;
         if (buoy!=null) {
-            buoy.setbPH(buoy.getbPH() > 2 ? buoy.getbPH() : null);
-            buoy.setbAirTemperature(buoy.getbAirTemperature() > 20 ? buoy.getbAirTemperature() : null);
+            buoy.setbA0(buoy.getbA0() > 2 ? buoy.getbA0() : null);
+            buoy.setbA1(buoy.getbA1() > 20 ? buoy.getbA2() : null);
             return buoy;
         }else {
             return null;

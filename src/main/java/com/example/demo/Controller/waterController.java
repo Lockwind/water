@@ -1,13 +1,12 @@
 package com.example.demo.Controller;
 
 import com.example.demo.Service.userService;
-import com.example.demo.domain.User;
+import com.example.demo.domain.user;
 import com.example.demo.response.Message;
 import com.example.demo.response.loginMsg;
 import com.example.demo.util.userTokenUtil;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import org.omg.CORBA.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,17 +22,17 @@ public class waterController {
     @RequestMapping("/login")
     public Message<loginMsg> Login(String logininfo){
         //将json转为map
-        User userinfo=new Gson().fromJson(logininfo,User.class);
+        user userinfo=new Gson().fromJson(logininfo, user.class);
         //按名字查用户
-        User user=userService.signin(userinfo.getUsername());
+        user user=userService.signin(userinfo.getUserName());
         if (user!=null) {
             //将logininfo中密码与数据库密码进行比对
-            if (userTokenUtil.getStr(user.getUserpwd()).equals(userinfo.getUserpwd())) {
+            if (userTokenUtil.getStr(user.getUserPwd()).equals(userinfo.getUserPwd())) {
                 //创建token
-                String token=userTokenUtil.getToken(user.getUserid()+"/"+ System.currentTimeMillis());
+                String token=userTokenUtil.getToken(user.getUserId()+"/"+ System.currentTimeMillis());
                 //将userid和token存入一个共有的map
-                userTokenUtil.Users.put(user.getUserid(),token);
-                return new Message<loginMsg>(1,"success",new loginMsg(token,user.getPart(),user.getUserid()));
+                userTokenUtil.Users.put(user.getUserId(),token);
+                return new Message<loginMsg>(1,"success",new loginMsg(token,user.getPart(),user.getUserId()));
             } else {
                 return new Message<>(0, "密码错误", null);
             }
@@ -67,14 +66,14 @@ public class waterController {
         Integer userid = Integer.parseInt(info.get("Userid"));
         String old_pwd = info.get("Old_pwd");
         String new_pwd = info.get("New_pwd");
-        User user = new User();
-        user.setUserid(userid);
-        user.setUserpwd(new_pwd);
+        user user = new user();
+        user.setUserId(userid);
+        user.setUserPwd(new_pwd);
         //根据id查用户
-        User u = userService.signin(userid);
+        com.example.demo.domain.user u = userService.signin(userid);
         if (u != null) {
             //比对密码
-            if (u.getUserpwd().equals(old_pwd)){
+            if (u.getUserPwd().equals(old_pwd)){
                 //更新密码
                 if (userService.updatepwd(user)) {
                     return new Message<>(1, "success", null);
@@ -90,15 +89,15 @@ public class waterController {
     }
 
     @RequestMapping("/list_users")
-    public Message<List<User>> list_users(String Token){
+    public Message<List<user>> list_users(String Token){
         int uId=Integer.parseInt(userTokenUtil.getStr(Token).split("/")[0]);
         //取出id
-        User user=userService.signin(uId);
+        user user=userService.signin(uId);
         if (user!=null) {
             //比对用户身份
             if (user.getPart().equals("root") || user.getPart().equals("admin")) {
                 //返回所有用户
-                return new Message<List<User>>(1, "success", userService.selectAll());
+                return new Message<List<com.example.demo.domain.user>>(1, "success", userService.selectAll());
             } else {
                 return new Message<>(0, "无权访问", null);
             }

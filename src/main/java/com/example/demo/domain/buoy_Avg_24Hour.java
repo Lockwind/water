@@ -2,7 +2,7 @@ package com.example.demo.domain;
 
 import java.time.LocalDateTime;
 
-public class buoy {
+public class buoy_Avg_24Hour {
     private int bId;                       //浮标数据id
     private LocalDateTime bTime;           //记录时间
     private float bA0;                     //酸碱度
@@ -29,10 +29,11 @@ public class buoy {
     private float bA21;       //平均风速
     private float bA22;   //平均风向
 
-    public buoy() {
+    public buoy_Avg_24Hour() {
+
     }
 
-    public buoy(LocalDateTime bTime, float bA0, float bA1, float bA2, float bA3, float bA4, float bA5, float bA6, float bA7, float bA8, float bA9, float bA10, float bA11, float bA12, float bA13, float bA14, float bA15, float bA16, float bA17, float bA18, float bA19, float bA20, float bA21, float bA22) {
+    public buoy_Avg_24Hour(LocalDateTime bTime, float bA0, float bA1, float bA2, float bA3, float bA4, float bA5, float bA6, float bA7, float bA8, float bA9, float bA10, float bA11, float bA12, float bA13, float bA14, float bA15, float bA16, float bA17, float bA18, float bA19, float bA20, float bA21, float bA22) {
         this.bTime = bTime;
         this.bA0 = bA0;
         this.bA1 = bA1;
@@ -59,7 +60,7 @@ public class buoy {
         this.bA22 = bA22;
     }
 
-    public buoy(int bId, LocalDateTime bTime, float bA0, float bA1, float bA2, float bA3, float bA4, float bA5, float bA6, float bA7, float bA8, float bA9, float bA10, float bA11, float bA12, float bA13, float bA14, float bA15, float bA16, float bA17, float bA18, float bA19, float bA20, float bA21, float bA22) {
+    public buoy_Avg_24Hour(int bId, LocalDateTime bTime, float bA0, float bA1, float bA2, float bA3, float bA4, float bA5, float bA6, float bA7, float bA8, float bA9, float bA10, float bA11, float bA12, float bA13, float bA14, float bA15, float bA16, float bA17, float bA18, float bA19, float bA20, float bA21, float bA22) {
         this.bId = bId;
         this.bTime = bTime;
         this.bA0 = bA0;
@@ -289,7 +290,7 @@ public class buoy {
 
     @Override
     public String toString() {
-        return "buoy{" +
+        return "buoy_Avg_24Hour{" +
                 "bId=" + bId +
                 ", bTime=" + bTime +
                 ", bA0=" + bA0 +
@@ -318,4 +319,3 @@ public class buoy {
                 '}';
     }
 }
-

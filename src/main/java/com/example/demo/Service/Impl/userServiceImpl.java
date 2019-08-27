@@ -2,7 +2,7 @@ package com.example.demo.Service.Impl;
 
 import com.example.demo.Service.userService;
 import com.example.demo.dao.Userdao;
-import com.example.demo.domain.User;
+import com.example.demo.domain.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,22 +15,22 @@ public class userServiceImpl implements userService  {
     private Userdao userdao;
 
     @Override
-    public User signin(String uName) {
+    public user signin(String uName) {
         return userdao.selectbyName(uName);
     }
 
     @Override
-    public User signin(Integer uId) {
+    public user signin(Integer uId) {
         return userdao.selectbyId(uId);
     }
 
     @Override
-    public boolean updatepwd(User user) {
+    public boolean updatepwd(user user) {
         return userdao.updatepwd(user)!=0?true:false;
     }
 
     @Override
-    public List<User> selectAll() {
+    public List<user> selectAll() {
         return userdao.selectAll();
     }
 }

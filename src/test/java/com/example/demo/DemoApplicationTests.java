@@ -4,7 +4,6 @@ import com.example.demo.dao.Buoydao;
 import com.example.demo.dao.StationDao;
 import com.example.demo.dao.Userdao;
 import com.example.demo.dao.VirulenceDao;
-import com.example.demo.domain.User;
 import com.example.demo.util.userTokenUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,9 +26,13 @@ public class DemoApplicationTests {
 
     @Test
     public void contextLoads() {
-        System.out.println(userTokenUtil.getToken("654321"));
+        System.out.println(userTokenUtil.getToken("123456"));
     }
 
+    @Test
+    public void demo(){
+        System.out.println(userdao.selectbyName("hjc"));
+    }
     @Test
     public void test(){
         System.out.println(buoydao.findByNewTime());

@@ -3,28 +3,30 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.dao.Userdao">
-    <resultMap id="userResult" type="com.example.demo.domain.User">
-        <id column="uId" property="userid"></id>
-        <result column="uName" property="username"></result>
-        <result column="uPwd" property="userpwd"></result>
+    <resultMap id="userResult" type="com.example.demo.domain.user">
+        <id column="id" property="userId"></id>
+        <result column="username" property="userName"></result>
+        <result column="password" property="userPwd"></result>
+        <result column="device_token" property="deviceToken"></result>
         <result column="pId" property="pId"></result>
+        <result column="part" property="part"></result>
     </resultMap>
     <select id="selectbyName" parameterType="java.lang.String" resultMap="userResult">
-         select uId,uName,uPwd,p.pId,p.pName from User
+        select id,username,password,p.pId,p.pName from water.user
             inner join part p
-                on User.uId = p.pId
-                    where uName=#{uName};
+                on user.id = p.pId
+                    where username=#{uName};
     </select>
     <select id="selectbyId" parameterType="java.lang.Integer" resultMap="userResult">
-        select uId,uName,uPwd,User.pId,p.pName part from User
-        inner join part p
-        on User.pId = p.pId
-        where uId=#{uId};
+        select id,username,password,user.pId,p.pName part from water.user
+            inner join part p
+                on user.pId = p.pId
+                    where uId=#{uId};
     </select>
     <update id="updatepwd" parameterType="user">
-     update User set uPwd=#{userpwd} where uId=#{userid}
+         update water.user set password=#{userpwd} where id=#{userid}
     </update>
     <select id="selectAll" resultMap="userResult">
-        select uId,uName from User;
+        select id,username from water.user;
     </select>
 </mapper>

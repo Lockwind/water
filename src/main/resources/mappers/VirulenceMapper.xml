@@ -4,15 +4,15 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.dao.VirulenceDao">
         <resultMap id="VirulenceResultMap" type="com.example.demo.domain.virulence">
-            <id property="vId" column="v_id"/>
-            <result property="vVirus" column="v_virus"/>
-            <result property="vTime" column="v_time"/>
+            <id property="vId" column="id"/>
+            <result property="vVirus" column="viru"/>
+            <result property="vTime" column="time"/>
         </resultMap>
     <!--<select id="findB" resultMap="BuoyResultMap">
          select * from buoy order by bId desc limit 1;
     </select>-->
 
     <select id="findByNewTime" resultMap="VirulenceResultMap" parameterType="java.time.LocalDateTime">
-         SELECT * from virulence where virulence.v_time=(select max(virulence.v_time) from virulence);
+         select * from virulence where water.virulence.time=(select max(water.virulence.time) from virulence);
     </select>
 </mapper>

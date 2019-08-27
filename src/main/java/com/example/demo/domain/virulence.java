@@ -4,18 +4,19 @@ import java.time.LocalDateTime;
 
 public class virulence {
     private int vId;
-    private double vVirus;
-    private LocalDateTime   vTime;
+    private float vVirus;
+    private LocalDateTime vTime;
 
     public virulence() {
+
     }
 
-    public virulence(double vVirus, LocalDateTime vTime) {
+    public virulence(float vVirus, LocalDateTime vTime) {
         this.vVirus = vVirus;
         this.vTime = vTime;
     }
 
-    public virulence(int vId, double vVirus, LocalDateTime vTime) {
+    public virulence(int vId, float vVirus, LocalDateTime vTime) {
         this.vId = vId;
         this.vVirus = vVirus;
         this.vTime = vTime;
@@ -29,11 +30,11 @@ public class virulence {
         this.vId = vId;
     }
 
-    public double getvVirus() {
+    public float getvVirus() {
         return vVirus;
     }
 
-    public void setvVirus(double vVirus) {
+    public void setvVirus(float vVirus) {
         this.vVirus = vVirus;
     }
 
