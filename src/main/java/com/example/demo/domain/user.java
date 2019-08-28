@@ -16,6 +16,11 @@ public class user {
     public user() {
     }
 
+    public user(Integer userId, String userPwd) {
+        this.userId = userId;
+        this.userPwd = userPwd;
+    }
+
     public user(String userName, String userPwd, String deviceToken, Integer pId, String part) {
         this.userName = userName;
         this.userPwd = userPwd;

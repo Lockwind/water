@@ -3,6 +3,9 @@ package com.example.demo.Service.Impl;
 import com.example.demo.Service.userService;
 import com.example.demo.dao.Userdao;
 import com.example.demo.domain.user;
+import com.example.demo.response.Message;
+import com.example.demo.response.loginMsg;
+import com.example.demo.util.userTokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,23 +17,60 @@ public class userServiceImpl implements userService  {
     @Autowired
     private Userdao userdao;
 
+
     @Override
-    public user signin(String uName) {
-        return userdao.selectbyName(uName);
+    public Message<loginMsg> login(user webuser) {
+        //按名字查用户
+        user user=userdao.selectbyName(webuser.getUserName());
+        if (user!=null) {
+            //将logininfo中密码与数据库密码进行比对
+            if (userTokenUtil.getStr(user.getUserPwd()).equals(webuser.getUserPwd())) {
+                //创建token
+                String token=userTokenUtil.getToken(user.getUserId()+"/"+ System.currentTimeMillis());
+                //将userid和token存入一个共有的map
+                userTokenUtil.Users.put(user.getUserId(),token);
+                return new Message<>(1,"success",new loginMsg(token,user.getPart(),user.getUserId()));
+            } else {
+                return new Message<>(0, "密码错误", null);
+            }
+        }else {
+            return new Message<>(0,"用户不存在",null);
+        }
     }
 
     @Override
-    public user signin(Integer uId) {
-        return userdao.selectbyId(uId);
+    public Message<loginMsg> updatepwd(Integer uid, String oldPwd, String newPwd) {
+        user u = userdao.selectbyId(uid);
+        if (u != null) {
+            //比对密码
+            if (u.getUserPwd().equals(oldPwd)){
+                //更新密码
+                if (userdao.updatepwd(new user(uid,newPwd))>0) {
+                    return new Message<>(1, "success", null);
+                } else {
+                    return new Message<>(0, "更改失败", null);
+                }
+            }else {
+                return new Message<>(0, "密码错误", null);
+            }
+        }else {
+            return new Message<>(0, "用户id不存在", null);
+        }
     }
 
     @Override
-    public boolean updatepwd(user user) {
-        return userdao.updatepwd(user)!=0?true:false;
-    }
-
-    @Override
-    public List<user> selectAll() {
-        return userdao.selectAll();
+    public Message<List<user>> selectAll(Integer uId) {
+        user user=userdao.selectbyId(uId);
+        if (user!=null) {
+            //比对用户身份
+            if (user.getPart().equals("root") || user.getPart().equals("admin")) {
+                //返回所有用户
+                return new Message<List<com.example.demo.domain.user>>(1, "success", userdao.selectAll());
+            } else {
+                return new Message<>(0, "无权访问", null);
+            }
+        }else {
+            return new Message<>(0, "无此用户", null);
+        }
     }
 }
