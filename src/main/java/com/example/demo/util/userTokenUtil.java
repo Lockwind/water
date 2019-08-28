@@ -19,7 +19,7 @@ import java.util.Map;
 
 public class userTokenUtil {
 
-    public static Map<Integer,String> Users=new HashedMap();
+    public static Map<Integer,String> Users=new HashMap<>();
 
     public static String getToken(String idAndTime){
         return new BASE64Encoder().encode(idAndTime.getBytes());
