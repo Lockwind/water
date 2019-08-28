@@ -41,11 +41,6 @@ public class waterController {
         }
     }
 
-    @RequestMapping(value = "/monitor")
-    public String monitor(){
-        return "";
-    }
-
     @RequestMapping("/login_out")
     public Message login_out(String Token){
         //从token中取得用户id

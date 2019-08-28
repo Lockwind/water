@@ -1,420 +1,193 @@
-2019-08-27 07:32:17.360  INFO 4098 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication on hjc with PID 4098 (/home/userhan/IdeaProjects/watermanager/target/classes started by userhan in /home/userhan/IdeaProjects/watermanager)
-2019-08-27 07:32:17.367  INFO 4098 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
-2019-08-27 07:32:19.768  INFO 4098 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-08-27 07:32:19.785  INFO 4098 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-08-27 07:32:19.786  INFO 4098 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
-2019-08-27 07:32:19.896  INFO 4098 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-08-27 07:32:19.896 DEBUG 4098 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
-2019-08-27 07:32:19.896  INFO 4098 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2202 ms
-2019-08-27 07:32:21.938  INFO 4098 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-08-27 07:32:21.983 DEBUG 4098 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
-2019-08-27 07:32:22.109 DEBUG 4098 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2019-08-27 07:32:22.226 DEBUG 4098 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
-2019-08-27 07:32:22.248 DEBUG 4098 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2019-08-27 07:32:22.263 DEBUG 4098 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2019-08-27 07:32:22.325  WARN 4098 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2019-08-27 07:32:22.634  INFO 4098 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-08-27 07:32:22.636  INFO 4098 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 6.784 seconds (JVM running for 8.917)
-2019-08-27 07:35:21.579  INFO 4098 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-08-27 07:35:21.611  INFO 4098 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-08-27 07:35:21.612 DEBUG 4098 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2019-08-27 07:35:21.901 DEBUG 4098 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2019-08-27 07:35:21.902  INFO 4098 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 290 ms
-2019-08-27 07:35:22.023 DEBUG 4098 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/login?logininfo=%7B%22username%22:%22hjc%22,%22userpwd%22:%22123%22%7D", parameters={masked}
-2019-08-27 07:35:22.275 DEBUG 4098 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.example.demo.response.Message<com.example.demo.response.loginMsg> com.example.demo.Controller.waterController.Login(java.lang.String)
-2019-08-27 07:35:24.143  INFO 4098 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-08-27 07:35:28.591  INFO 4098 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-08-27 07:35:31.259 DEBUG 4098 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2019-08-27 07:35:31.260 DEBUG 4098 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [Message{Code=0, Msg='用户不存在', Date=null}]
-2019-08-27 07:35:32.048 DEBUG 4098 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2019-08-27 07:35:46.230 DEBUG 4098 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/login?logininfo=%7B%22username%22:%22hjc%22,%22userpwd%22:%22123%22%7D", parameters={masked}
-2019-08-27 07:35:46.232 DEBUG 4098 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.example.demo.response.Message<com.example.demo.response.loginMsg> com.example.demo.Controller.waterController.Login(java.lang.String)
-2019-08-27 07:35:46.236 DEBUG 4098 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2019-08-27 07:35:46.237 DEBUG 4098 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [Message{Code=0, Msg='用户不存在', Date=null}]
-2019-08-27 07:35:46.238 DEBUG 4098 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2019-08-27 07:36:46.898  INFO 4098 --- [Thread-14] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-08-27 07:36:46.899  INFO 4098 --- [Thread-14] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-08-27 07:36:46.904  INFO 4098 --- [Thread-14] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2019-08-27 07:36:51.555  INFO 5363 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication on hjc with PID 5363 (/home/userhan/IdeaProjects/watermanager/target/classes started by userhan in /home/userhan/IdeaProjects/watermanager)
-2019-08-27 07:36:51.568  INFO 5363 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
-2019-08-27 07:36:53.431  INFO 5363 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-08-27 07:36:53.448  INFO 5363 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-08-27 07:36:53.449  INFO 5363 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
-2019-08-27 07:36:53.580  INFO 5363 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-08-27 07:36:53.581 DEBUG 5363 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
-2019-08-27 07:36:53.582  INFO 5363 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1744 ms
-2019-08-27 07:36:54.827  INFO 5363 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-08-27 07:36:54.871 DEBUG 5363 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
-2019-08-27 07:36:55.006 DEBUG 5363 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2019-08-27 07:36:55.043 DEBUG 5363 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
-2019-08-27 07:36:55.118 DEBUG 5363 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2019-08-27 07:36:55.126 DEBUG 5363 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2019-08-27 07:36:55.141  WARN 5363 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2019-08-27 07:36:55.432  INFO 5363 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-08-27 07:36:55.434  INFO 5363 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 5.089 seconds (JVM running for 5.919)
-2019-08-27 07:37:04.294  INFO 5363 --- [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-08-27 07:37:04.294  INFO 5363 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-08-27 07:37:04.295 DEBUG 5363 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2019-08-27 07:37:04.312 DEBUG 5363 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2019-08-27 07:37:04.312  INFO 5363 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
-2019-08-27 07:37:04.324 DEBUG 5363 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/login?logininfo=%7B%22username%22:%22hjc%22,%22userpwd%22:%22123%22%7D", parameters={masked}
-2019-08-27 07:37:04.331 DEBUG 5363 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.example.demo.response.Message<com.example.demo.response.loginMsg> com.example.demo.Controller.waterController.Login(java.lang.String)
-2019-08-27 07:37:04.394  INFO 5363 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-08-27 07:37:04.485  INFO 5363 --- [http-nio-8080-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-08-27 07:37:04.530 DEBUG 5363 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2019-08-27 07:37:04.531 DEBUG 5363 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [Message{Code=0, Msg='用户不存在', Date=null}]
-2019-08-27 07:37:04.543 DEBUG 5363 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2019-08-27 07:40:19.280  INFO 5363 --- [Thread-12] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-08-27 07:40:19.288  INFO 5363 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-08-27 07:40:19.303  INFO 5363 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2019-08-27 07:40:22.346  INFO 5625 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication on hjc with PID 5625 (/home/userhan/IdeaProjects/watermanager/target/classes started by userhan in /home/userhan/IdeaProjects/watermanager)
-2019-08-27 07:40:22.350  INFO 5625 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
-2019-08-27 07:40:23.503  INFO 5625 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-08-27 07:40:23.521  INFO 5625 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-08-27 07:40:23.521  INFO 5625 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
-2019-08-27 07:40:23.590  INFO 5625 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-08-27 07:40:23.590 DEBUG 5625 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
-2019-08-27 07:40:23.590  INFO 5625 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1197 ms
-2019-08-27 07:40:24.135  INFO 5625 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-08-27 07:40:24.178 DEBUG 5625 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
-2019-08-27 07:40:24.265 DEBUG 5625 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2019-08-27 07:40:24.386 DEBUG 5625 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
-2019-08-27 07:40:24.406 DEBUG 5625 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2019-08-27 07:40:24.419 DEBUG 5625 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2019-08-27 07:40:24.448  WARN 5625 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2019-08-27 07:40:24.739  INFO 5625 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-08-27 07:40:24.741  INFO 5625 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 2.674 seconds (JVM running for 3.085)
-2019-08-27 07:40:33.753  INFO 5625 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-08-27 07:40:33.754  INFO 5625 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-08-27 07:40:33.754 DEBUG 5625 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2019-08-27 07:40:33.759 DEBUG 5625 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2019-08-27 07:40:33.759  INFO 5625 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2019-08-27 07:40:33.764 DEBUG 5625 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/login?logininfo=%7B%22username%22:%22hjc%22,%22userpwd%22:%22123%22%7D", parameters={masked}
-2019-08-27 07:40:33.768 DEBUG 5625 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.example.demo.response.Message<com.example.demo.response.loginMsg> com.example.demo.Controller.waterController.Login(java.lang.String)
-2019-08-27 07:40:33.794  INFO 5625 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-08-27 07:40:33.875  INFO 5625 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-08-27 07:40:33.922 DEBUG 5625 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2019-08-27 07:40:33.923 DEBUG 5625 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [Message{Code=0, Msg='用户不存在', Date=null}]
-2019-08-27 07:40:33.934 DEBUG 5625 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2019-08-27 07:41:16.907 DEBUG 5625 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/login_out?Token=Mi8xNTY2NzkxMDQ1NjA0", parameters={masked}
-2019-08-27 07:41:16.908 DEBUG 5625 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.example.demo.response.Message com.example.demo.Controller.waterController.login_out(java.lang.String)
-2019-08-27 07:41:17.398 DEBUG 5625 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2019-08-27 07:41:43.378 DEBUG 5625 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/login?logininfo=%7B%22userName%22:%22hjc%22,%22userPwd%22:%22123%22%7D", parameters={masked}
-2019-08-27 07:41:43.379 DEBUG 5625 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.example.demo.response.Message<com.example.demo.response.loginMsg> com.example.demo.Controller.waterController.Login(java.lang.String)
-2019-08-27 07:41:44.710 DEBUG 5625 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Failed to complete request: java.lang.NullPointerException
-2019-08-27 07:41:44.720 ERROR 5625 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+2019-08-28 02:18:54.835  INFO 9468 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication on hjc with PID 9468 (/home/userhan/IdeaProjects/watermanager/target/classes started by userhan in /home/userhan/IdeaProjects/watermanager)
+2019-08-28 02:18:54.839  INFO 9468 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2019-08-28 02:18:57.149  INFO 9468 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-08-28 02:18:57.167  INFO 9468 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-28 02:18:57.167  INFO 9468 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-28 02:18:57.325  INFO 9468 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-28 02:18:57.326 DEBUG 9468 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-08-28 02:18:57.326  INFO 9468 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2420 ms
+2019-08-28 02:18:58.533  INFO 9468 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-28 02:18:58.567 DEBUG 9468 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-08-28 02:18:58.649 DEBUG 9468 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-08-28 02:18:58.682 DEBUG 9468 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2019-08-28 02:18:58.690 DEBUG 9468 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-08-28 02:18:58.696 DEBUG 9468 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-08-28 02:18:58.711  WARN 9468 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-08-28 02:18:59.047  INFO 9468 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-28 02:18:59.050  INFO 9468 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 5.112 seconds (JVM running for 7.227)
+2019-08-28 02:20:01.744  INFO 9468 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-28 02:20:01.744  INFO 9468 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-08-28 02:20:01.745 DEBUG 9468 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2019-08-28 02:20:01.753 DEBUG 9468 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-08-28 02:20:01.753  INFO 9468 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2019-08-28 02:20:01.761 DEBUG 9468 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/login?logininfo=%7B%22userName%22:%22hjc%22,%22userPwd%22:%22123%22%7D", parameters={masked}
+2019-08-28 02:20:01.766 DEBUG 9468 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.example.demo.response.Message<com.example.demo.response.loginMsg> com.example.demo.Controller.waterController.Login(java.lang.String)
+2019-08-28 02:20:01.800  INFO 9468 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-08-28 02:20:02.393  INFO 9468 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-08-28 02:20:02.706 DEBUG 9468 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2019-08-28 02:20:02.706 DEBUG 9468 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [Message{Code=1, Msg='success', Date=com.example.demo.response.loginMsg@5354b64d}]
+2019-08-28 02:20:02.726 DEBUG 9468 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-08-28 02:20:18.734 DEBUG 9468 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/NewTime", parameters={}
+2019-08-28 02:20:18.735 DEBUG 9468 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.example.demo.response.Message<com.example.demo.response.DataMsg> com.example.demo.Controller.DataControllers.newTime()
+2019-08-28 02:20:18.908 DEBUG 9468 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2019-08-28 02:20:18.910 DEBUG 9468 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [Message{Code=1, Msg='查询成功', Date=DataMsg{buoy=[buoy{bId=1, bTime=2019-08-27T05:23:50, bA0=1.0, bA1=1 (truncated)...]
+2019-08-28 02:20:18.934 DEBUG 9468 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-08-28 03:14:57.200  INFO 9468 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-28 03:14:57.202  INFO 9468 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-08-28 03:14:57.223  INFO 9468 --- [Thread-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-08-28 03:15:14.211  INFO 13338 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication on hjc with PID 13338 (/home/userhan/IdeaProjects/watermanager/target/classes started by userhan in /home/userhan/IdeaProjects/watermanager)
+2019-08-28 03:15:14.213  INFO 13338 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2019-08-28 03:15:17.037  INFO 13338 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-08-28 03:15:17.054  INFO 13338 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-28 03:15:17.055  INFO 13338 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-28 03:15:17.255  INFO 13338 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-28 03:15:17.256 DEBUG 13338 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-08-28 03:15:17.257  INFO 13338 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2859 ms
+2019-08-28 03:15:19.671  INFO 13338 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-28 03:15:19.713 DEBUG 13338 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-08-28 03:15:19.795 DEBUG 13338 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-08-28 03:15:19.835  WARN 13338 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'waterController' method 
+public java.lang.String com.example.demo.Controller.waterController.monitor()
+to { /monitor}: There is already 'dataControllers' bean method
+public com.example.demo.response.Message<com.example.demo.response.DataMsg> com.example.demo.Controller.DataControllers.newTime() mapped.
+2019-08-28 03:15:19.835  INFO 13338 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-28 03:15:19.838  INFO 13338 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-08-28 03:15:19.846  INFO 13338 --- [main] ConditionEvaluationReportLoggingListener : 
 
-java.lang.NullPointerException: null
-	at sun.misc.CharacterDecoder.decodeBuffer(CharacterDecoder.java:187) ~[na:1.8.0_211]
-	at com.example.demo.util.userTokenUtil.getStr(userTokenUtil.java:31) ~[classes/:na]
-	at com.example.demo.Controller.waterController.Login(waterController.java:30) ~[classes/:na]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_211]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_211]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_211]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_211]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853) [tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587) [tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.21.jar:9.0.21]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_211]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_211]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.21.jar:9.0.21]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_211]
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-28 03:15:19.895 ERROR 13338 --- [main] o.s.boot.SpringApplication               : Application run failed
 
-2019-08-27 07:41:44.722 DEBUG 5625 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error?logininfo=%7B%22userName%22:%22hjc%22,%22userPwd%22:%22123%22%7D", parameters={masked}
-2019-08-27 07:41:44.724 DEBUG 5625 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-2019-08-27 07:41:44.724 DEBUG 5625 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 500
-2019-08-27 07:41:52.663 DEBUG 5625 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/login?logininfo=%7B%22userName%22:%22hjc%22,%22userPwd%22:%22123%22%7D", parameters={masked}
-2019-08-27 07:41:52.663 DEBUG 5625 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.example.demo.response.Message<com.example.demo.response.loginMsg> com.example.demo.Controller.waterController.Login(java.lang.String)
-2019-08-27 07:41:52.671 DEBUG 5625 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Failed to complete request: java.lang.NullPointerException
-2019-08-27 07:41:52.672 ERROR 5625 --- [http-nio-8080-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'waterController' method 
+public java.lang.String com.example.demo.Controller.waterController.monitor()
+to { /monitor}: There is already 'dataControllers' bean method
+public com.example.demo.response.Message<com.example.demo.response.DataMsg> com.example.demo.Controller.DataControllers.newTime() mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:845) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at com.example.demo.DemoApplication.main(DemoApplication.java:10) [classes/:na]
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'waterController' method 
+public java.lang.String com.example.demo.Controller.waterController.monitor()
+to { /monitor}: There is already 'dataControllers' bean method
+public com.example.demo.response.Message<com.example.demo.response.DataMsg> com.example.demo.Controller.DataControllers.newTime() mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.assertUniqueMethodMapping(AbstractHandlerMethodMapping.java:618) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:586) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:312) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$1(AbstractHandlerMethodMapping.java:282) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_211]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:280) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:252) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:211) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:199) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:164) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 16 common frames omitted
 
-java.lang.NullPointerException: null
-	at sun.misc.CharacterDecoder.decodeBuffer(CharacterDecoder.java:187) ~[na:1.8.0_211]
-	at com.example.demo.util.userTokenUtil.getStr(userTokenUtil.java:31) ~[classes/:na]
-	at com.example.demo.Controller.waterController.Login(waterController.java:30) ~[classes/:na]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_211]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_211]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_211]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_211]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:109) ~[spring-web-5.1.8.RELEASE.jar:5.1.8.RELEASE]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853) [tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587) [tomcat-embed-core-9.0.21.jar:9.0.21]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.21.jar:9.0.21]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_211]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_211]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.21.jar:9.0.21]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_211]
+2019-08-28 03:17:09.750  INFO 13687 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication on hjc with PID 13687 (/home/userhan/IdeaProjects/watermanager/target/classes started by userhan in /home/userhan/IdeaProjects/watermanager)
+2019-08-28 03:17:09.753  INFO 13687 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2019-08-28 03:17:10.868  INFO 13687 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-08-28 03:17:10.885  INFO 13687 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-28 03:17:10.885  INFO 13687 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-28 03:17:10.955  INFO 13687 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-28 03:17:10.955 DEBUG 13687 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-08-28 03:17:10.955  INFO 13687 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1152 ms
+2019-08-28 03:17:11.478  INFO 13687 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-28 03:17:11.505 DEBUG 13687 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-08-28 03:17:11.583 DEBUG 13687 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-08-28 03:17:11.608  WARN 13687 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'waterController' method 
+public java.lang.String com.example.demo.Controller.waterController.monitor()
+to { /monitor}: There is already 'dataControllers' bean method
+public com.example.demo.response.Message<com.example.demo.response.DataMsg> com.example.demo.Controller.DataControllers.newTime() mapped.
+2019-08-28 03:17:11.608  INFO 13687 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-08-28 03:17:11.611  INFO 13687 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-08-28 03:17:11.619  INFO 13687 --- [main] ConditionEvaluationReportLoggingListener : 
 
-2019-08-27 07:41:52.673 DEBUG 5625 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for GET "/error?logininfo=%7B%22userName%22:%22hjc%22,%22userPwd%22:%22123%22%7D", parameters={masked}
-2019-08-27 07:41:52.674 DEBUG 5625 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-2019-08-27 07:41:52.675 DEBUG 5625 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 500
-2019-08-27 07:42:16.566 DEBUG 5625 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/login?logininfo=%7B%22username%22:%22hjc%22,%22password%22:%22123%22%7D", parameters={masked}
-2019-08-27 07:42:16.566 DEBUG 5625 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.example.demo.response.Message<com.example.demo.response.loginMsg> com.example.demo.Controller.waterController.Login(java.lang.String)
-2019-08-27 07:42:16.569 DEBUG 5625 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2019-08-27 07:42:16.570 DEBUG 5625 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [Message{Code=0, Msg='用户不存在', Date=null}]
-2019-08-27 07:42:16.570 DEBUG 5625 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2019-08-27 07:48:09.634  INFO 6082 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests on hjc with PID 6082 (started by userhan in /home/userhan/IdeaProjects/watermanager)
-2019-08-27 07:48:09.635  INFO 6082 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to default profiles: default
-2019-08-27 07:48:09.744 DEBUG 6082 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@4b45a2f5
-2019-08-27 07:48:12.143  INFO 6082 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-08-27 07:48:12.469 DEBUG 6082 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
-2019-08-27 07:48:12.613 DEBUG 6082 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2019-08-27 07:48:12.702 DEBUG 6082 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
-2019-08-27 07:48:12.721 DEBUG 6082 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2019-08-27 07:48:12.731 DEBUG 6082 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2019-08-27 07:48:12.797  WARN 6082 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2019-08-27 07:48:13.184  INFO 6082 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 3.9 seconds (JVM running for 5.15)
-2019-08-27 07:48:13.529 DEBUG 6082 --- [Thread-2] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@4b45a2f5, started on Tue Aug 27 07:48:09 EDT 2019
-2019-08-27 07:48:13.532  INFO 6082 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-08-27 07:48:43.667  INFO 6132 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests on hjc with PID 6132 (started by userhan in /home/userhan/IdeaProjects/watermanager)
-2019-08-27 07:48:43.672  INFO 6132 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to default profiles: default
-2019-08-27 07:48:43.773 DEBUG 6132 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@38cee291
-2019-08-27 07:48:45.669  INFO 6132 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-08-27 07:48:45.981 DEBUG 6132 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
-2019-08-27 07:48:46.128 DEBUG 6132 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2019-08-27 07:48:46.187 DEBUG 6132 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
-2019-08-27 07:48:46.207 DEBUG 6132 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2019-08-27 07:48:46.217 DEBUG 6132 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2019-08-27 07:48:46.250  WARN 6132 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2019-08-27 07:48:46.562  INFO 6132 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 3.54 seconds (JVM running for 4.231)
-2019-08-27 07:48:46.697 DEBUG 6132 --- [Thread-2] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@38cee291, started on Tue Aug 27 07:48:43 EDT 2019
-2019-08-27 07:48:46.699  INFO 6132 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-08-27 07:49:07.337  INFO 6196 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests on hjc with PID 6196 (started by userhan in /home/userhan/IdeaProjects/watermanager)
-2019-08-27 07:49:07.339  INFO 6196 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to default profiles: default
-2019-08-27 07:49:07.386 DEBUG 6196 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1e0b4072
-2019-08-27 07:49:09.044  INFO 6196 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-08-27 07:49:09.381 DEBUG 6196 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
-2019-08-27 07:49:09.546 DEBUG 6196 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2019-08-27 07:49:09.614 DEBUG 6196 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
-2019-08-27 07:49:09.657 DEBUG 6196 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2019-08-27 07:49:09.683 DEBUG 6196 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2019-08-27 07:49:09.730  WARN 6196 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2019-08-27 07:49:10.141  INFO 6196 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 3.456 seconds (JVM running for 4.473)
-2019-08-27 07:49:10.289  INFO 6196 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-08-27 07:49:10.847  INFO 6196 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-08-27 07:49:11.081 DEBUG 6196 --- [Thread-2] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@1e0b4072, started on Tue Aug 27 07:49:07 EDT 2019
-2019-08-27 07:49:11.083  INFO 6196 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-08-27 07:49:11.084  INFO 6196 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-08-27 07:49:11.093  INFO 6196 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2019-08-27 07:50:09.246  INFO 6304 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests on hjc with PID 6304 (started by userhan in /home/userhan/IdeaProjects/watermanager)
-2019-08-27 07:50:09.250  INFO 6304 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to default profiles: default
-2019-08-27 07:50:09.307 DEBUG 6304 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@38cee291
-2019-08-27 07:50:11.134  INFO 6304 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-08-27 07:50:11.456 DEBUG 6304 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
-2019-08-27 07:50:11.609 DEBUG 6304 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2019-08-27 07:50:11.674 DEBUG 6304 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
-2019-08-27 07:50:11.696 DEBUG 6304 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2019-08-27 07:50:11.706 DEBUG 6304 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2019-08-27 07:50:11.737  WARN 6304 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2019-08-27 07:50:12.066  INFO 6304 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 3.285 seconds (JVM running for 4.338)
-2019-08-27 07:50:12.206  INFO 6304 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-08-27 07:50:12.400  INFO 6304 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-08-27 07:50:12.461 DEBUG 6304 --- [Thread-2] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@38cee291, started on Tue Aug 27 07:50:09 EDT 2019
-2019-08-27 07:50:12.464  INFO 6304 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-08-27 07:50:12.474  INFO 6304 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-08-27 07:50:12.478  INFO 6304 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2019-08-27 07:51:53.337  INFO 5625 --- [Thread-7] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-08-27 07:51:53.338  INFO 5625 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-08-27 07:51:53.353  INFO 5625 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2019-08-27 07:51:55.617  INFO 6444 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication on hjc with PID 6444 (/home/userhan/IdeaProjects/watermanager/target/classes started by userhan in /home/userhan/IdeaProjects/watermanager)
-2019-08-27 07:51:55.619  INFO 6444 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
-2019-08-27 07:51:56.755  INFO 6444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-08-27 07:51:56.776  INFO 6444 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-08-27 07:51:56.777  INFO 6444 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
-2019-08-27 07:51:56.847  INFO 6444 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-08-27 07:51:56.848 DEBUG 6444 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
-2019-08-27 07:51:56.848  INFO 6444 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1204 ms
-2019-08-27 07:51:57.402  INFO 6444 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-08-27 07:51:57.446 DEBUG 6444 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
-2019-08-27 07:51:57.532 DEBUG 6444 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2019-08-27 07:51:57.634 DEBUG 6444 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
-2019-08-27 07:51:57.644 DEBUG 6444 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2019-08-27 07:51:57.652 DEBUG 6444 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2019-08-27 07:51:57.666  WARN 6444 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2019-08-27 07:51:57.821  INFO 6444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-08-27 07:51:57.823  INFO 6444 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 2.457 seconds (JVM running for 2.837)
-2019-08-27 07:52:08.452  INFO 6444 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-08-27 07:52:08.453  INFO 6444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-08-27 07:52:08.453 DEBUG 6444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2019-08-27 07:52:08.459 DEBUG 6444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2019-08-27 07:52:08.459  INFO 6444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
-2019-08-27 07:52:08.465 DEBUG 6444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/login?logininfo=%7B%22username%22:%22hjc%22,%22password%22:%22123%22%7D", parameters={masked}
-2019-08-27 07:52:08.471 DEBUG 6444 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.example.demo.response.Message<com.example.demo.response.loginMsg> com.example.demo.Controller.waterController.Login(java.lang.String)
-2019-08-27 07:52:08.500  INFO 6444 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-08-27 07:52:08.601  INFO 6444 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-08-27 07:52:08.640 DEBUG 6444 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2019-08-27 07:52:08.640 DEBUG 6444 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [Message{Code=0, Msg='用户不存在', Date=null}]
-2019-08-27 07:52:08.651 DEBUG 6444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2019-08-27 07:52:20.550  INFO 6553 --- [main] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests on hjc with PID 6553 (started by userhan in /home/userhan/IdeaProjects/watermanager)
-2019-08-27 07:52:20.555  INFO 6553 --- [main] com.example.demo.DemoApplicationTests    : No active profile set, falling back to default profiles: default
-2019-08-27 07:52:20.613 DEBUG 6553 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@f09733f
-2019-08-27 07:52:22.828  INFO 6553 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-08-27 07:52:23.188 DEBUG 6553 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
-2019-08-27 07:52:23.339 DEBUG 6553 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2019-08-27 07:52:23.396 DEBUG 6553 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
-2019-08-27 07:52:23.419 DEBUG 6553 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2019-08-27 07:52:23.429 DEBUG 6553 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2019-08-27 07:52:23.466  WARN 6553 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2019-08-27 07:52:23.758  INFO 6553 --- [main] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 3.62 seconds (JVM running for 4.313)
-2019-08-27 07:52:23.897  INFO 6553 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-08-27 07:52:24.040  INFO 6553 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-08-27 07:52:24.065 DEBUG 6553 --- [Thread-2] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@f09733f, started on Tue Aug 27 07:52:20 EDT 2019
-2019-08-27 07:52:24.069  INFO 6553 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-08-27 07:52:24.083  INFO 6553 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-08-27 07:52:24.088  INFO 6553 --- [Thread-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2019-08-27 07:52:42.018 DEBUG 6444 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/login?logininfo=%7B%22userName%22:%22hjc%22,%22password%22:%22123%22%7D", parameters={masked}
-2019-08-27 07:52:42.018 DEBUG 6444 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.example.demo.response.Message<com.example.demo.response.loginMsg> com.example.demo.Controller.waterController.Login(java.lang.String)
-2019-08-27 07:52:42.025 DEBUG 6444 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2019-08-27 07:52:42.025 DEBUG 6444 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [Message{Code=0, Msg='密码错误', Date=null}]
-2019-08-27 07:52:42.026 DEBUG 6444 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2019-08-27 07:52:51.727 DEBUG 6444 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/login?logininfo=%7B%22userName%22:%22hjc%22,%22password%22:%22123456%22%7D", parameters={masked}
-2019-08-27 07:52:51.727 DEBUG 6444 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.example.demo.response.Message<com.example.demo.response.loginMsg> com.example.demo.Controller.waterController.Login(java.lang.String)
-2019-08-27 07:52:51.731 DEBUG 6444 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2019-08-27 07:52:51.731 DEBUG 6444 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [Message{Code=0, Msg='密码错误', Date=null}]
-2019-08-27 07:52:51.732 DEBUG 6444 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2019-08-27 07:53:09.855 DEBUG 6444 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/login?logininfo=%7B%22username%22:%22hjc%22,%22password%22:%22123456%22%7D", parameters={masked}
-2019-08-27 07:53:09.856 DEBUG 6444 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.example.demo.response.Message<com.example.demo.response.loginMsg> com.example.demo.Controller.waterController.Login(java.lang.String)
-2019-08-27 07:53:09.858 DEBUG 6444 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2019-08-27 07:53:09.858 DEBUG 6444 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [Message{Code=0, Msg='用户不存在', Date=null}]
-2019-08-27 07:53:09.859 DEBUG 6444 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2019-08-27 07:53:23.401 DEBUG 6444 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/login?logininfo=%7B%22userName%22:%22hjc%22,%22userPwd%22:%22123456%22%7D", parameters={masked}
-2019-08-27 07:53:23.401 DEBUG 6444 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.example.demo.response.Message<com.example.demo.response.loginMsg> com.example.demo.Controller.waterController.Login(java.lang.String)
-2019-08-27 07:53:23.404 DEBUG 6444 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2019-08-27 07:53:23.404 DEBUG 6444 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [Message{Code=0, Msg='密码错误', Date=null}]
-2019-08-27 07:53:23.405 DEBUG 6444 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2019-08-27 07:53:26.465 DEBUG 6444 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/login?logininfo=%7B%22userName%22:%22hjc%22,%22userPwd%22:%22123%22%7D", parameters={masked}
-2019-08-27 07:53:26.465 DEBUG 6444 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.example.demo.response.Message<com.example.demo.response.loginMsg> com.example.demo.Controller.waterController.Login(java.lang.String)
-2019-08-27 07:53:26.468 DEBUG 6444 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2019-08-27 07:53:26.468 DEBUG 6444 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [Message{Code=1, Msg='success', Date=com.example.demo.response.loginMsg@60108803}]
-2019-08-27 07:53:26.471 DEBUG 6444 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2019-08-27 07:55:19.876 DEBUG 6444 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/login_out?Token=MS8xNTY2OTA2ODA2NDY3", parameters={masked}
-2019-08-27 07:55:19.877 DEBUG 6444 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.example.demo.response.Message com.example.demo.Controller.waterController.login_out(java.lang.String)
-2019-08-27 07:55:19.877 DEBUG 6444 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2019-08-27 09:32:39.229  INFO 6444 --- [Thread-7] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-08-27 09:32:39.258  INFO 6444 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-08-27 09:32:39.266  INFO 6444 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2019-08-27 09:32:51.654  INFO 10333 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication on hjc with PID 10333 (/home/userhan/IdeaProjects/watermanager/target/classes started by userhan in /home/userhan/IdeaProjects/watermanager)
-2019-08-27 09:32:51.657  INFO 10333 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
-2019-08-27 09:32:55.150  INFO 10333 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2019-08-27 09:32:55.169  INFO 10333 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-08-27 09:32:55.169  INFO 10333 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
-2019-08-27 09:32:55.288  INFO 10333 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-08-27 09:32:55.289 DEBUG 10333 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
-2019-08-27 09:32:55.289  INFO 10333 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3579 ms
-2019-08-27 09:32:56.574  INFO 10333 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-08-27 09:32:56.661 DEBUG 10333 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
-2019-08-27 09:32:56.961 DEBUG 10333 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2019-08-27 09:32:56.999 DEBUG 10333 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
-2019-08-27 09:32:57.010 DEBUG 10333 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2019-08-27 09:32:57.109 DEBUG 10333 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2019-08-27 09:32:57.127  WARN 10333 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2019-08-27 09:32:57.553  INFO 10333 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-08-27 09:32:57.555  INFO 10333 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 6.78 seconds (JVM running for 9.502)
-2019-08-27 09:33:11.526  INFO 10333 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-08-27 09:33:11.527  INFO 10333 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-08-27 09:33:11.527 DEBUG 10333 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2019-08-27 09:33:11.534 DEBUG 10333 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2019-08-27 09:33:11.534  INFO 10333 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
-2019-08-27 09:33:11.539 DEBUG 10333 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/login?logininfo=%7B%22userName%22:%22hjc%22,%22userPwd%22:%22123%22%7D", parameters={masked}
-2019-08-27 09:33:11.543 DEBUG 10333 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.example.demo.response.Message<com.example.demo.response.loginMsg> com.example.demo.Controller.waterController.Login(java.lang.String)
-2019-08-27 09:33:11.581  INFO 10333 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-08-27 09:33:11.874  INFO 10333 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-08-27 09:33:12.040 DEBUG 10333 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2019-08-27 09:33:12.041 DEBUG 10333 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [Message{Code=1, Msg='success', Date=com.example.demo.response.loginMsg@655b3a1f}]
-2019-08-27 09:33:12.057 DEBUG 10333 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2019-08-27 09:33:34.560 DEBUG 10333 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/NewTime", parameters={}
-2019-08-27 09:33:34.561 DEBUG 10333 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.example.demo.response.Message<com.example.demo.response.DataMsg> com.example.demo.Controller.DataControllers.newTime(java.lang.String)
-2019-08-27 09:33:34.561 DEBUG 10333 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2019-08-27 09:33:46.118 DEBUG 10333 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/NewTime?Token=MS8xNTY2OTEyNzkxOTUz", parameters={masked}
-2019-08-27 09:33:46.118 DEBUG 10333 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.example.demo.response.Message<com.example.demo.response.DataMsg> com.example.demo.Controller.DataControllers.newTime(java.lang.String)
-2019-08-27 09:33:46.119 DEBUG 10333 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
-2019-08-27 09:34:19.974 DEBUG 10333 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/NewTime?Token=MS8xNTY2OTEyNzkxOTUz", parameters={masked}
-2019-08-27 09:34:19.975 DEBUG 10333 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.example.demo.response.Message<com.example.demo.response.DataMsg> com.example.demo.Controller.DataControllers.newTime(java.lang.String)
-2019-08-27 09:34:19.982 DEBUG 10333 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
-2019-08-27 09:34:19.982 DEBUG 10333 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [Message{Code=1, Msg='查询成功', Date=DataMsg{buoy=[buoy{bId=1, bTime=2019-08-27T05:23:50, bA0=1.0, bA1=1 (truncated)...]
-2019-08-27 09:34:20.653 DEBUG 10333 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-28 03:17:11.624 ERROR 13687 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'waterController' method 
+public java.lang.String com.example.demo.Controller.waterController.monitor()
+to { /monitor}: There is already 'dataControllers' bean method
+public com.example.demo.response.Message<com.example.demo.response.DataMsg> com.example.demo.Controller.DataControllers.newTime() mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:845) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:877) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549) ~[spring-context-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140) ~[spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202) [spring-boot-2.1.6.RELEASE.jar:2.1.6.RELEASE]
+	at com.example.demo.DemoApplication.main(DemoApplication.java:10) [classes/:na]
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'waterController' method 
+public java.lang.String com.example.demo.Controller.waterController.monitor()
+to { /monitor}: There is already 'dataControllers' bean method
+public com.example.demo.response.Message<com.example.demo.response.DataMsg> com.example.demo.Controller.DataControllers.newTime() mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.assertUniqueMethodMapping(AbstractHandlerMethodMapping.java:618) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:586) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:312) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$1(AbstractHandlerMethodMapping.java:282) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684) ~[na:1.8.0_211]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:280) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:252) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:211) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:199) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:164) ~[spring-webmvc-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774) ~[spring-beans-5.1.8.RELEASE.jar:5.1.8.RELEASE]
+	... 16 common frames omitted
+
+2019-08-28 03:18:07.553  INFO 13831 --- [main] com.example.demo.DemoApplication         : Starting DemoApplication on hjc with PID 13831 (/home/userhan/IdeaProjects/watermanager/target/classes started by userhan in /home/userhan/IdeaProjects/watermanager)
+2019-08-28 03:18:07.556  INFO 13831 --- [main] com.example.demo.DemoApplication         : No active profile set, falling back to default profiles: default
+2019-08-28 03:18:08.479  INFO 13831 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-08-28 03:18:08.495  INFO 13831 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-28 03:18:08.495  INFO 13831 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-28 03:18:08.554  INFO 13831 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-28 03:18:08.554 DEBUG 13831 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2019-08-28 03:18:08.554  INFO 13831 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 969 ms
+2019-08-28 03:18:09.054  INFO 13831 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-28 03:18:09.083 DEBUG 13831 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-08-28 03:18:09.159 DEBUG 13831 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-08-28 03:18:09.192 DEBUG 13831 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2019-08-28 03:18:09.200 DEBUG 13831 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-08-28 03:18:09.217 DEBUG 13831 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-08-28 03:18:09.243  WARN 13831 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-08-28 03:18:10.186  INFO 13831 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-28 03:18:10.193  INFO 13831 --- [main] com.example.demo.DemoApplication         : Started DemoApplication in 2.954 seconds (JVM running for 3.362)
+2019-08-28 03:18:16.834  INFO 13831 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-28 03:18:16.834  INFO 13831 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-08-28 03:18:16.834 DEBUG 13831 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2019-08-28 03:18:16.875 DEBUG 13831 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-08-28 03:18:16.875  INFO 13831 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 41 ms
+2019-08-28 03:18:16.881 DEBUG 13831 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/login?logininfo=%7B%22userName%22:%22hjc%22,%22userPwd%22:%22123%22%7D", parameters={masked}
+2019-08-28 03:18:17.105 DEBUG 13831 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.example.demo.response.Message<com.example.demo.response.loginMsg> com.example.demo.Controller.waterController.Login(java.lang.String)
+2019-08-28 03:18:17.343  INFO 13831 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-08-28 03:18:17.700  INFO 13831 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-08-28 03:18:17.854 DEBUG 13831 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2019-08-28 03:18:17.854 DEBUG 13831 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [Message{Code=1, Msg='success', Date=com.example.demo.response.loginMsg@32c4db70}]
+2019-08-28 03:18:17.893 DEBUG 13831 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-08-28 03:18:37.050 DEBUG 13831 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/monitor", parameters={}
+2019-08-28 03:18:37.051 DEBUG 13831 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public com.example.demo.response.Message<com.example.demo.response.DataMsg> com.example.demo.Controller.DataControllers.newTime()
+2019-08-28 03:18:37.059 DEBUG 13831 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2019-08-28 03:18:37.060 DEBUG 13831 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [Message{Code=1, Msg='查询成功', Date=DataMsg{buoy=[buoy{bId=0, bTime=null, bA0=1.0, bA1=1.0, bA2=1.0, bA (truncated)...]
+2019-08-28 03:18:37.072 DEBUG 13831 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK

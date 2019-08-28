@@ -13,6 +13,6 @@
     </select>-->
 
     <select id="findByNewTime" resultMap="VirulenceResultMap" parameterType="java.time.LocalDateTime">
-         select * from virulence where water.virulence.time=(select max(water.virulence.time) from virulence);
+         select viru from virulence where time=(select max(time) from virulence);
     </select>
 </mapper>
