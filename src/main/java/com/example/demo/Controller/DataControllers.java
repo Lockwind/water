@@ -25,7 +25,7 @@ public class DataControllers {
                 virulenceService.findByNewTime());
     }*/
 
-
+    /*最新数据*/
     @RequestMapping(value = "/monitor")
     public Message<DataMsg> newTime() {
         return new Message<>(1,"查询成功",new DataMsg(dataService.findByBuoyNewTime(),dataService.findByVirulenceNewTime(),dataService.findByStationNewTime()));
