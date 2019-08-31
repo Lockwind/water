@@ -27,7 +27,7 @@ public class DataServiceImpl implements DataService {
     @Override
     public Message<DataMsg> findByNewTime() {
         List<buoy> newbuoy=buoydao.findByNewTime();
-        if (newbuoy.isEmpty()){
+        if (newbuoy!=null){
             List<station> newstation=stationDao.findByNewTime();
             if (newstation!=null){
                 List<virulence> newvirul=virulenceDao.findByNewTime();
