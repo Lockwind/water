@@ -7,7 +7,6 @@ import com.example.demo.domain.virulence;
 import java.util.List;
 
 public class DataMsg {
-    private Integer DataId;
     private List<buoy> buoy;
     private List<virulence> virulence;
     private List<station> station;
@@ -22,18 +21,9 @@ public class DataMsg {
     }
 
     public DataMsg(Integer dataId, List<com.example.demo.domain.buoy> buoy, List<com.example.demo.domain.virulence> virulence, List<com.example.demo.domain.station> station) {
-        DataId = dataId;
         this.buoy = buoy;
         this.virulence = virulence;
         this.station = station;
-    }
-
-    public Integer getDataId() {
-        return DataId;
-    }
-
-    public void setDataId(Integer dataId) {
-        DataId = dataId;
     }
 
     public List<com.example.demo.domain.buoy> getBuoy() {

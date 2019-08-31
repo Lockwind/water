@@ -9,4 +9,5 @@ public interface VirulenceDao {
 
     List<virulence> findByNewTime();
 
+
 }

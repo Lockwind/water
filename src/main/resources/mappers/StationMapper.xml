@@ -21,6 +21,6 @@
     </select>-->
 
     <select id="findByNewTime" resultMap="StationResultMap" parameterType="java.time.LocalDateTime">
-            select * from station where water.station.time=(select max(water.station.time) from station);
+            select S1, S2, S3, S4, S5, S6, S7, S8, S9 from station where time=(select max(time) from station);
     </select>
 </mapper>

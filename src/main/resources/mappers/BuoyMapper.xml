@@ -6,35 +6,32 @@
         <resultMap id="BuoyResultMap" type="com.example.demo.domain.buoy">
             <id property="bId" column="id"/>
             <result property="bTime" column="time" javaType="java.time.LocalDateTime"/>
-            <result property="bA0" column="b001"/>
-            <result property="bA1" column="b003"/>
-            <result property="bA2" column="b010"/>
-            <result property="bA3" column="b011"/>
-            <result property="bA4" column="b015"/>
-            <result property="bA5" column="b060"/>
-            <result property="bA6" column="bA00"/>
-            <result property="bA7" column="bA01"/>
-            <result property="bA8" column="bA02"/>
-            <result property="bA9" column="bA03"/>
-            <result property="bA10" column="bA04"/>
-            <result property="bA11" column="bA05"/>
-            <result property="bA12" column="bA06"/>
-            <result property="bA13" column="bA07"/>
-            <result property="bA14" column="bA08"/>
-            <result property="bA15" column="bA09"/>
-            <result property="bA16" column="bA10"/>
-            <result property="bA17" column="bA11"/>
-            <result property="bA18" column="bA12"/>
-            <result property="bA19" column="bA13"/>
-            <result property="bA20" column="bA14"/>
-            <result property="bA21" column="bA15"/>
-            <result property="bA22" column="bA16"/>
+            <result property="b001" column="b001"/>
+            <result property="b003" column="b003"/>
+            <result property="b010" column="b010"/>
+            <result property="b011" column="b011"/>
+            <result property="b015" column="b015"/>
+            <result property="b060" column="b060"/>
+            <result property="bA00" column="bA00"/>
+            <result property="bA01" column="bA01"/>
+            <result property="bA02" column="bA02"/>
+            <result property="bA03" column="bA03"/>
+            <result property="bA04" column="bA04"/>
+            <result property="bA05" column="bA05"/>
+            <result property="bA06" column="bA06"/>
+            <result property="bA07" column="bA07"/>
+            <result property="bA08" column="bA08"/>
+            <result property="bA09" column="bA09"/>
+            <result property="bA10" column="bA10"/>
+            <result property="bA11" column="bA11"/>
+            <result property="bA12" column="bA12"/>
+            <result property="bA13" column="bA13"/>
+            <result property="bA14" column="bA14"/>
+            <result property="bA15" column="bA15"/>
+            <result property="bA16" column="bA16"/>
         </resultMap>
-    <select id="findB" resultMap="BuoyResultMap">
-         select * from water.buoy order by id desc limit 1;
-    </select>
 
     <select id="findByNewTime" resultMap="BuoyResultMap" parameterType="java.time.LocalDateTime">
-         select * from buoy where water.buoy.time=(select max(water.buoy.time) from buoy);
+         select b001, b003, b010, b011, b015, b060, bA00, bA01, bA02, bA03, bA04, bA05, bA06, bA07, bA08, bA09, bA10, bA11, bA12, bA13, bA14, bA15, bA16  from buoy where time=(select max(time) from buoy);
     </select>
 </mapper>
