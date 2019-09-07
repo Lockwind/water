@@ -4,9 +4,6 @@ public class Message<T> {
     private int Code;
     private String Msg;
     private T Date;
-    /*private List<buoy> buoy;
-    private List<station> station;
-    private List<virulence> virulence;*/
 
     public Message() {
     }

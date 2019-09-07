@@ -9,5 +9,5 @@ import com.example.demo.response.Message;
 import java.util.List;
 
 public interface DataService {
-    Message<DataMsg> findByNewTime();
+    DataMsg findByNewTime();
 }

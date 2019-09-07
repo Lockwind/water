@@ -3,16 +3,16 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.dao.VirulenceDao">
-        <resultMap id="VirulenceResultMap" type="com.example.demo.domain.virulence">
-            <id property="vId" column="id"/>
-            <result property="vVirus" column="viru"/>
-            <result property="vTime" column="time"/>
-        </resultMap>
+    <resultMap id="VirulenceResultMap" type="com.example.demo.domain.virulence">
+        <id property="vId" column="id"/>
+        <result property="vVirus" column="viru"/>
+        <result property="vTime" column="time"/>
+    </resultMap>
     <!--<select id="findB" resultMap="BuoyResultMap">
          select * from buoy order by bId desc limit 1;
     </select>-->
 
     <select id="findByNewTime" resultMap="VirulenceResultMap" parameterType="java.time.LocalDateTime">
-         select viru from virulence where time=(select max(time) from virulence);
+         select viru,time from virulence order by id desc limit 1;
     </select>
 </mapper>

@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.dao.Buoydao">
-    <resultMap id="BuoyResultMap" type="com.example.demo.domain.buoy">
+<mapper namespace="com.example.demo.dao.Buoy_24hourDao">
+    <resultMap id="BuoyResultMap" type="com.example.demo.domain.buoy_Avg_24Hour">
         <id property="bId" column="id"/>
         <result property="bTime" column="time" javaType="java.time.LocalDateTime"/>
         <result property="b001" column="b001"/>
@@ -31,8 +31,27 @@
         <result property="bA16" column="bA16"/>
     </resultMap>
 
-    <select id="findByNewTime" resultMap="BuoyResultMap" parameterType="java.time.LocalDateTime">
-         select id,time,b001, b003, b010, b011, b015, b060, bA00, bA01, bA02, bA03, bA04, bA05, bA06, bA07, bA08, bA09, bA10, bA11, bA12, bA13, bA14, bA15, bA16  from buoy order by id desc limit 1;
-    </select>
+    <sql id="colums">
+        time, b001, b003, b010, b011, b015, b060, bA00, bA01, bA02, bA03, bA04, bA05, bA06, bA07, bA08, bA09, bA10, bA11, bA12, bA13, bA14, bA15, bA16
+    </sql>
 
+    <update id="trunBuoy_24hour">
+        truncate table buoy_avg_24hour;
+    </update>
+
+    <insert id="addBuoy_24hour" parameterType="time">
+        insert into buoy_avg_24hour(<include refid="colums"></include>) select <include refid="colums"></include> from
+        buoy where time between #{startTime} and #{endTime};
+    </insert>
+
+    <insert id="saveNewBuoy" parameterType="Buoy">
+        insert into buoy_avg_24hour(<include refid="colums"></include>)
+        values (#{bTime},#{b001},#{b003},#{b010},#{b011},#{b015},#{b060},#{bA00},#{bA01},#{bA02}
+        ,#{bA03},#{bA04},#{bA05},#{bA06},#{bA07},#{bA08},#{bA09},#{bA10},
+        #{bA11},#{bA12},#{bA13},#{bA14},#{bA15},#{bA16});
+    </insert>
+
+    <delete id="delOldBuoy">
+        delete
+    </delete>
 </mapper>

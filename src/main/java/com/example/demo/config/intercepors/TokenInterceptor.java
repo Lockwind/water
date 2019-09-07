@@ -12,16 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 public class TokenInterceptor implements HandlerInterceptor {
 
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler){
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         response.setCharacterEncoding("utf-8");
         //获得请求头中的token
-        String token=(String)request.getHeader("Token");
-        if (token!=null){
+        String token = (String) request.getHeader("Token");
+        if (token != null) {
             //取出id
-            String userid=userTokenUtil.getStr(token).split("/")[0];
+            String userid = userTokenUtil.getStr(token).split("/")[0];
             //按id取出共有map的Token
-            String thistoken=userTokenUtil.Users.get(Integer.parseInt(userid));
-            if (thistoken!=null) {
+            String thistoken = userTokenUtil.Users.get(Integer.parseInt(userid));
+            if (thistoken != null) {
                 //比对token
                 if (thistoken.equals(token)) {
                     return true;

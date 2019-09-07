@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.virulence_24hourDao">
+    <update id="trunviru_24hour">
+        truncate table virulence_avg_24hour;
+    </update>
+
+    <insert id="addviru_24hour" parameterType="time">
+        insert into virulence_avg_24hour(viru,time)  select viru, time from virulence where time between #{startTime} and #{endTime};
+    </insert>
+
+    <insert id="saveViru_24hour" parameterType="viru">
+        insert into virulence_avg_24hour(viru, time)
+        values (#{vVirus},#{vTime});
+    </insert>
+</mapper>

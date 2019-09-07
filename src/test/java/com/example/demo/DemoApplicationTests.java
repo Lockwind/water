@@ -1,9 +1,14 @@
 package com.example.demo;
 
+import com.example.demo.Service.DataService;
+import com.example.demo.Service.Data_24hourService;
 import com.example.demo.dao.Buoydao;
 import com.example.demo.dao.StationDao;
 import com.example.demo.dao.Userdao;
 import com.example.demo.dao.VirulenceDao;
+import com.example.demo.domain.buoy;
+import com.example.demo.domain.buoy_Avg_24Hour;
+import com.example.demo.response.DataMsg;
 import com.example.demo.util.userTokenUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,15 +22,25 @@ import java.time.LocalDateTime;
 @SpringBootTest
 public class DemoApplicationTests {
 
+    @Autowired
+    Data_24hourService service;
+    @Autowired
+    DataService dataService;
+
+    private buoy olddata = new buoy();
+
+    private boolean isRepeat(buoy buoy) {
+        return olddata.equals(buoy) == true ? false : true;
+    }
 
     @Test
-    public void contextLoads()
-    {
-        LocalDateTime time=LocalDateTime.now();
-        StringBuilder str=new StringBuilder();
-            String s=str.append(time.plusHours(1)+":00").replace(10,11," ").toString();
-
-        System.out.println(s);
+    public void contextLoads() {
+        LocalDateTime localDateTime = LocalDateTime.now();
+        buoy a = new buoy();
+        a.setbTime(localDateTime);
+        buoy b = new buoy();
+        b.setbTime(localDateTime);
+        System.out.println(a.equals(b));
     }
 
 

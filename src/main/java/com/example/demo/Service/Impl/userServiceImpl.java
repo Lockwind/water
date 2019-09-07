@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class userServiceImpl implements userService  {
+public class userServiceImpl implements userService {
 
     @Autowired
     private Userdao userdao;
@@ -21,20 +21,20 @@ public class userServiceImpl implements userService  {
     @Override
     public Message<loginMsg> login(user webuser) {
         //按名字查用户
-        user user=userdao.selectbyName(webuser.getUserName());
-        if (user!=null) {
+        user user = userdao.selectbyName(webuser.getUserName());
+        if (user != null) {
             //将logininfo中密码与数据库密码进行比对
             if (userTokenUtil.getStr(user.getUserPwd()).equals(webuser.getUserPwd())) {
                 //创建token
-                String token=userTokenUtil.getToken(user.getUserId()+"/"+ System.currentTimeMillis());
+                String token = userTokenUtil.getToken(user.getUserId() + "/" + System.currentTimeMillis());
                 //将userid和token存入一个共有的map
-                userTokenUtil.Users.put(user.getUserId(),token);
-                return new Message<>(1,"success",new loginMsg(token,user.getPart(),user.getUserId()));
+                userTokenUtil.Users.put(user.getUserId(), token);
+                return new Message<>(1, "success", new loginMsg(token, user.getPart(), user.getUserId()));
             } else {
                 return new Message<>(0, "密码错误", null);
             }
-        }else {
-            return new Message<>(0,"用户不存在",null);
+        } else {
+            return new Message<>(0, "用户不存在", null);
         }
     }
 
@@ -43,25 +43,25 @@ public class userServiceImpl implements userService  {
         user u = userdao.selectbyId(uid);
         if (u != null) {
             //比对密码
-            if (u.getUserPwd().equals(oldPwd)){
+            if (u.getUserPwd().equals(oldPwd)) {
                 //更新密码
-                if (userdao.updatepwd(new user(uid,newPwd))>0) {
+                if (userdao.updatepwd(new user(uid, newPwd)) > 0) {
                     return new Message<>(1, "success", null);
                 } else {
                     return new Message<>(0, "更改失败", null);
                 }
-            }else {
+            } else {
                 return new Message<>(0, "密码错误", null);
             }
-        }else {
+        } else {
             return new Message<>(0, "用户id不存在", null);
         }
     }
 
     @Override
     public Message<List<user>> selectAll(Integer uId) {
-        user user=userdao.selectbyId(uId);
-        if (user!=null) {
+        user user = userdao.selectbyId(uId);
+        if (user != null) {
             //比对用户身份
             if (user.getPart().equals("root") || user.getPart().equals("admin")) {
                 //返回所有用户
@@ -69,7 +69,7 @@ public class userServiceImpl implements userService  {
             } else {
                 return new Message<>(0, "无权访问", null);
             }
-        }else {
+        } else {
             return new Message<>(0, "无此用户", null);
         }
     }

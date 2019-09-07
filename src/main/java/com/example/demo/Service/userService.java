@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface userService {
     Message<loginMsg> login(user user);
-    Message<loginMsg> updatepwd(Integer uid,String oldPwd,String newPwd);
+
+    Message<loginMsg> updatepwd(Integer uid, String oldPwd, String newPwd);
+
     Message<List<user>> selectAll(Integer uid);
 }

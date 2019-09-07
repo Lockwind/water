@@ -12,19 +12,19 @@ import java.util.Map;
 
 public class userTokenUtil {
 
-    public static Map<Integer,String> Users=new HashMap<>();
+    public static Map<Integer, String> Users = new HashMap<>();
 
-    public static String getToken(String idAndTime){
+    public static String getToken(String idAndTime) {
         return new BASE64Encoder().encode(idAndTime.getBytes());
     }
 
-    public static String getStr(String token){
+    public static String getStr(String token) {
         byte[] str;
         try {
-             str= new BASE64Decoder().decodeBuffer(token);
-        }catch (IOException e){
+            str = new BASE64Decoder().decodeBuffer(token);
+        } catch (IOException e) {
             e.fillInStackTrace();
-            throw  new RuntimeException("密码出错");
+            throw new RuntimeException("密码出错");
         }
         return new String(str);
     }

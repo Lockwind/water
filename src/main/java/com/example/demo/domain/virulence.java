@@ -1,40 +1,48 @@
 package com.example.demo.domain;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import org.apache.ibatis.type.Alias;
+
 import java.time.LocalDateTime;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@Alias("viru")
 public class virulence {
-    private int vId;
-    private float vVirus;
+    private Integer vId;
+    private Float vVirus;
     private LocalDateTime vTime;
 
-    public virulence() {
-
+    public virulence(LocalDateTime vTime) {
+        this.vTime = vTime;
     }
 
-    public virulence(float vVirus, LocalDateTime vTime) {
+    public virulence() {
+    }
+
+    public virulence(Float vVirus, LocalDateTime vTime) {
         this.vVirus = vVirus;
         this.vTime = vTime;
     }
 
-    public virulence(int vId, float vVirus, LocalDateTime vTime) {
+    public virulence(Integer vId, Float vVirus, LocalDateTime vTime) {
         this.vId = vId;
         this.vVirus = vVirus;
         this.vTime = vTime;
     }
 
-    public int getvId() {
+    public Integer getvId() {
         return vId;
     }
 
-    public void setvId(int vId) {
+    public void setvId(Integer vId) {
         this.vId = vId;
     }
 
-    public float getvVirus() {
+    public Float getvVirus() {
         return vVirus;
     }
 
-    public void setvVirus(float vVirus) {
+    public void setvVirus(Float vVirus) {
         this.vVirus = vVirus;
     }
 

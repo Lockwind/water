@@ -2,7 +2,11 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.demo.dao.StationDao">
+<mapper namespace="com.example.demo.dao.station_24hourDao">
+
+    <sql id="colums">
+      S1, S2, S3, S4, S5, S6, S7, S8, S9, time
+    </sql>
     <resultMap id="StationResultMap" type="com.example.demo.domain.station">
         <id property="sId" column="id"/>
         <result property="s1" column="S1"/>
@@ -16,11 +20,19 @@
         <result property="s9" column="S9"/>
         <result property="sTime" column="time"/>
     </resultMap>
-    <!--<select id="findB" resultMap="BuoyResultMap">
-         select * from buoy order by bId desc limit 1;
-    </select>-->
 
-    <select id="findByNewTime" resultMap="StationResultMap" parameterType="java.time.LocalDateTime">
-            select S1, S2, S3, S4, S5, S6, S7, S8, S9,time from station order by id desc limit 1;
-    </select>
+    <update id="trunstat_24hour">
+        truncate table station_avg_24hour;
+    </update>
+
+    <insert id="addstat_24hour" parameterType="time">
+        insert into station_avg_24hour(<include refid="colums"></include>) select <include refid="colums"></include> from
+        station where time between #{startTime} and #{endTime};
+    </insert>
+
+    <insert id="saveNewStat" parameterType="stat">
+        insert into station_avg_24hour(<include refid="colums"></include>)
+        values (#{s1},#{s2},#{s3},#{s4},#{s5},#{s6},#{s7}
+        ,#{s8},#{s9},#{sTime});
+    </insert>
 </mapper>

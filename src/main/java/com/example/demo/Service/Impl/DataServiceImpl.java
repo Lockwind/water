@@ -11,6 +11,7 @@ import com.example.demo.response.DataMsg;
 import com.example.demo.response.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -25,22 +26,23 @@ public class DataServiceImpl implements DataService {
     private VirulenceDao virulenceDao;
 
     @Override
-    public Message<DataMsg> findByNewTime() {
-        List<buoy> newbuoy=buoydao.findByNewTime();
-        if (newbuoy!=null){
-            List<station> newstation=stationDao.findByNewTime();
-            if (newstation!=null){
-                List<virulence> newvirul=virulenceDao.findByNewTime();
-                if (newvirul!=null){
-                    Message<DataMsg> msg=new Message<>();
-                    msg.setCode(0);
-                    msg.setMsg("success");
-                    msg.setDate(new DataMsg(newbuoy,newvirul,newstation));
-                    return msg;
+    @Transactional
+    public DataMsg findByNewTime() {
+        List<buoy> newbuoy = buoydao.findByNewTime();
+        if (!newbuoy.isEmpty()) {
+            List<station> newstation = stationDao.findByNewTime();
+            if (!newstation.isEmpty()) {
+                List<virulence> newvirul = virulenceDao.findByNewTime();
+                if (!newvirul.isEmpty()) {
+                    DataMsg data = new DataMsg();
+                    data.setBuoy(newbuoy);
+                    data.setStation(newstation);
+                    data.setVirulence(newvirul);
+                    return data;
                 }
             }
         }
-        return new Message<>(0,"fail",null);
+        return null;
     }
 
 }

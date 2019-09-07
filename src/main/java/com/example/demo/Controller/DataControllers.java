@@ -15,7 +15,11 @@ public class DataControllers {
     /*最新数据*/
     @RequestMapping(value = "/monitor")
     public Message<DataMsg> newTime() {
-
-        return dataService.findByNewTime();
+        DataMsg dataMsg = dataService.findByNewTime();
+        if (dataMsg != null) {
+            return new Message<>(1, "成功", dataMsg);
+        }
+        return new Message<>(0, "查无数据", null);
     }
+
 }
