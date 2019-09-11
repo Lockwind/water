@@ -35,7 +35,7 @@ public class dataTask {
     }
 
     @Async
-    @Scheduled(cron = "0/30 * * * * ? ")
+    @Scheduled(cron = "5 0/10 * * * ? ")
     public void set_24hour() {
         if (isDataNull == false) {
             if (data_24hourServiceservice.fistUpd()) {
@@ -47,10 +47,14 @@ public class dataTask {
             DataMsg data = dataService.findByNewTime();
             if (isRepeat(data) == false) {
                 olddata=data;
-                System.out.println(data);
                 boolean flag = data_24hourServiceservice.saveData_24hour(data);
                 if (flag == false) {
                     throw new RuntimeException("定时任务出错");
+                }
+                if (data_24hourServiceservice.IsCountTrue()){
+                    if (!data_24hourServiceservice.delOldData()){
+                        throw new RuntimeException("定时任务出错");
+                    }
                 }
             } else {
                 throw new RuntimeException("数据相同");

@@ -35,4 +35,16 @@
         values (#{s1},#{s2},#{s3},#{s4},#{s5},#{s6},#{s7}
         ,#{s8},#{s9},#{sTime});
     </insert>
+
+    <select id="selCount" resultType="int">
+        select count(id) from station_avg_24hour;
+    </select>
+
+    <delete id="delOldstat">
+        delete from station_avg_24hour limit #{end};
+    </delete>
+
+    <select id="selbyFilter" resultMap="StationResultMap" parameterType="java.lang.String">
+        ${sql}
+    </select>
 </mapper>

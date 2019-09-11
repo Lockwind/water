@@ -51,7 +51,15 @@
         #{bA11},#{bA12},#{bA13},#{bA14},#{bA15},#{bA16});
     </insert>
 
+    <select id="selCount" resultType="int">
+        select count(id) from buoy_avg_24hour;
+    </select>
+
     <delete id="delOldBuoy">
-        delete
+        delete from buoy_avg_24hour limit #{end};
     </delete>
+
+    <select id="selbyFilter" resultMap="BuoyResultMap" parameterType="java.lang.String">
+        ${sql}
+    </select>
 </mapper>

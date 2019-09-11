@@ -291,4 +291,35 @@ public class buoy_Avg_24Hour {
     public void setbA16(Float bA16) {
         this.bA16 = bA16;
     }
+
+    @Override
+    public String toString() {
+        return "buoy_Avg_24Hour{" +
+                "bId=" + bId +
+                ", bTime=" + bTime +
+                ", b001=" + b001 +
+                ", b003=" + b003 +
+                ", b010=" + b010 +
+                ", b011=" + b011 +
+                ", b015=" + b015 +
+                ", b060=" + b060 +
+                ", bA00=" + bA00 +
+                ", bA01=" + bA01 +
+                ", bA02=" + bA02 +
+                ", bA03=" + bA03 +
+                ", bA04=" + bA04 +
+                ", bA05=" + bA05 +
+                ", bA06=" + bA06 +
+                ", bA07=" + bA07 +
+                ", bA08=" + bA08 +
+                ", bA09=" + bA09 +
+                ", bA10=" + bA10 +
+                ", bA11=" + bA11 +
+                ", bA12=" + bA12 +
+                ", bA13=" + bA13 +
+                ", bA14=" + bA14 +
+                ", bA15=" + bA15 +
+                ", bA16=" + bA16 +
+                '}';
+    }
 }
