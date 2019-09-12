@@ -73,11 +73,8 @@ public class DataMsg implements Comparable<DataMsg> {
     @Override
     public int compareTo(DataMsg o) {
         if (this.buoy.get(0).getbTime().compareTo(o.getBuoy().get(0).getbTime()) == 0) {
-            System.out.println("buoy");
             if (this.station.get(0).getsTime().compareTo(o.getStation().get(0).getsTime()) == 0) {
-                System.out.println("stat");
                 if (this.virulence.get(0).getvTime().compareTo(o.getVirulence().get(0).getvTime()) == 0) {
-                    System.out.println("viru");
                     return 0;
                 }
             }

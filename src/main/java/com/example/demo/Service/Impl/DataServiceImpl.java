@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -25,15 +26,18 @@ public class DataServiceImpl implements DataService {
     @Autowired
     private VirulenceDao virulenceDao;
 
+    private LocalDateTime oldtime=LocalDateTime.now().minusMinutes(10);
+
     @Override
     @Transactional
     public DataMsg findByNewTime() {
-        List<buoy> newbuoy = buoydao.findByNewTime();
+        List<buoy> newbuoy = buoydao.findByNewTime(oldtime);
         if (!newbuoy.isEmpty()) {
-            List<station> newstation = stationDao.findByNewTime();
+            List<station> newstation = stationDao.findByNewTime(oldtime);
             if (!newstation.isEmpty()) {
-                List<virulence> newvirul = virulenceDao.findByNewTime();
+                List<virulence> newvirul = virulenceDao.findByNewTime(oldtime);
                 if (!newvirul.isEmpty()) {
+                    oldtime=newbuoy.get(0).getbTime();
                     DataMsg data = new DataMsg();
                     data.setBuoy(newbuoy);
                     data.setStation(newstation);

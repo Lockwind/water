@@ -13,6 +13,6 @@
     </select>-->
 
     <select id="findByNewTime" resultMap="VirulenceResultMap" parameterType="java.time.LocalDateTime">
-         select viru,time from virulence order by id desc limit 1;
+         select viru,time from virulence where time>=#{time} order by id desc limit 1;
     </select>
 </mapper>

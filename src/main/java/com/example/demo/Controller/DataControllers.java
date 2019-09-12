@@ -53,13 +53,17 @@ public class DataControllers {
     }
 
     /*因为tomcat限制字符的缘故，只能使用post提交*/
-
     @RequestMapping("/history")
     public Message<Data_24hourMsg> history(@RequestBody Map<String,String> info){
+        String ss= info.get("Fileter");
+        String[][] infos;
+        try {
+            infos = getAraays(ss);
+        }catch (Exception e){
+            return new Message<Data_24hourMsg>(0,"参数异常",null);;
+        }
         switch ((String) info.get("Type")){
-            case "24小时":
-                String ss= info.get("Fileter");
-                String[][] infos=getAraays(ss);
+            case "1":               //24小时
                 return data24hourService.selbyFilter(infos);
             default:
                 return new Message<Data_24hourMsg>(0,"参数异常",null);

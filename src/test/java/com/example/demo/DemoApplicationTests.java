@@ -33,36 +33,10 @@ public class DemoApplicationTests {
         return olddata.equals(buoy) == true ? false : true;
     }
 
-    private String[][] getAraays(String str){
-        if (str.isEmpty()){
-            throw new RuntimeException("字符串为空");
-        }
-        str=str.substring(0,str.length()-2).replace("[","");
-        String[] strings=str.split("],");
-        String[][] strs=new String[strings.length][];
-        for (int i=0;i<strings.length;i++){
-            int _s=strings[i].lastIndexOf(",");
-            String[] strings2=new String[2];
-            strings2[0]=strings[i].substring(0,_s);
-            strings2[1]=strings[i].substring(_s+1,strings[i].length());
-            strs[i]=new String[strings2.length];
-            for (int j=0;j<strings2.length;j++){
-                strs[i][j]=strings2[j];
-            }
-        }
-        return strs;
-    }
-
 
     @Test
     public void contextLoads(){
-        String ss="[[b001,b002,1],[s1,2]]";
-        String[][] sss=getAraays(ss);
-        for (String[] strings : sss) {
-            for (String string : strings) {
-                System.out.println(string);
-            }
-        }
+        System.out.println(LocalDateTime.now().minusMinutes(10));
     }
 
 

@@ -32,7 +32,7 @@
     </resultMap>
 
     <select id="findByNewTime" resultMap="BuoyResultMap" parameterType="java.time.LocalDateTime">
-         select id,time,b001, b003, b010, b011, b015, b060, bA00, bA01, bA02, bA03, bA04, bA05, bA06, bA07, bA08, bA09, bA10, bA11, bA12, bA13, bA14, bA15, bA16  from buoy order by id desc limit 1;
+         select id,time,b001, b003, b010, b011, b015, b060, bA00, bA01, bA02, bA03, bA04, bA05, bA06, bA07, bA08, bA09, bA10, bA11, bA12, bA13, bA14, bA15, bA16 from buoy where time>=#{time} order by id desc limit 1;;
     </select>
 
 </mapper>
