@@ -33,7 +33,7 @@ public class waterController {
     @RequestMapping("/login_out")
     public Message login_out(String Token) {
         int uId;
-        if (Token==null){
+        if (!userTokenUtil.isTokenNull(Token)){
             return new Message<>(0,"参数异常",null);
         }
         try {
@@ -58,13 +58,25 @@ public class waterController {
         Integer userid = Integer.parseInt(info.get("Userid"));
         String old_pwd = info.get("Old_pwd");
         String new_pwd = info.get("New_pwd");
-        return userService.updatepwd(userid, old_pwd, new_pwd);
+        if (userid!=null && old_pwd!=null && new_pwd!=null) {
+            return userService.updatepwd(userid, old_pwd, new_pwd);
+        }else {
+            return new Message<>(0,"参数异常",null);
+        }
     }
 
     @RequestMapping("/list_users")
     public Message<List<user>> list_users(String Token) {
-        int uId = Integer.parseInt(userTokenUtil.getStr(Token).split("/")[0]);
-        //取出id
+        int uId;
+        if (!userTokenUtil.isTokenNull(Token)){
+            return new Message<>(0,"参数异常",null);
+        }
+        try {
+             uId=Integer.parseInt(userTokenUtil.getStr(Token).split("/")[0]);
+            //取出id
+        }catch (NumberFormatException e){
+            return new Message<>(0,"参数异常",null);
+        }
         return userService.selectAll(uId);
     }
 }

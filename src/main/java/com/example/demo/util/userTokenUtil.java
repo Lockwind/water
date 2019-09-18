@@ -14,6 +14,10 @@ public class userTokenUtil {
 
     public static Map<Integer, String> Users = new HashMap<>();
 
+    public static boolean isTokenNull(String Token){
+        return !(Token==null && Token.equals(""))?true:false;
+    }
+
     public static String getToken(String idAndTime) {
         return new BASE64Encoder().encode(idAndTime.getBytes());
     }
