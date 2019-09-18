@@ -1,5 +1,8 @@
 package com.example.demo.response;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Message<T> {
     private int Code;
     private String Msg;

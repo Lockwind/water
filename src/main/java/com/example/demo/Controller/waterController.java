@@ -4,6 +4,7 @@ import com.example.demo.Service.userService;
 import com.example.demo.domain.user;
 import com.example.demo.response.Message;
 import com.example.demo.response.loginMsg;
+import com.example.demo.util.checkObject;
 import com.example.demo.util.userTokenUtil;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -20,15 +21,27 @@ public class waterController {
     userService userService;
 
     @RequestMapping("/login")
-    public Message<loginMsg> Login(String logininfo) {
+    public Message<loginMsg> Login(String logininfo) throws IllegalAccessException{
         user userinfo = new Gson().fromJson(logininfo, user.class);
-        return userService.login(userinfo);
+        if (checkObject.check(userinfo,"userName","userPwd","deviceToken")){
+            return userService.login(userinfo);
+        }else{
+            return new Message<>(0,"参数异常",null);
+        }
     }
 
     @RequestMapping("/login_out")
     public Message login_out(String Token) {
-        //从token中取得用户id
-        int uId = Integer.parseInt(userTokenUtil.getStr(Token).split("/")[0]);
+        int uId;
+        if (Token==null){
+            return new Message<>(0,"参数异常",null);
+        }
+        try {
+            //从token中取得用户id
+            uId = Integer.parseInt(userTokenUtil.getStr(Token).split("/")[0]);
+        }catch (NumberFormatException e){
+            return new Message<>(0,"参数异常",null);
+        }
         //在共有map中移除token和id
         if (userTokenUtil.Users.remove(uId, Token)) {
             return new Message<>(1, "success", null);

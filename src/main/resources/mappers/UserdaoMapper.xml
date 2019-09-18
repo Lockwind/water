@@ -24,7 +24,7 @@
                     where uId=#{uId};
     </select>
     <update id="updatepwd" parameterType="user">
-         update water.User set uPwd=#{userpwd} where uId=#{userid}
+         update user set uPwd=#{userPwd} where uId=#{userId}
     </update>
     <select id="selectAll" resultMap="userResult">
         select uId,uName from water.user;

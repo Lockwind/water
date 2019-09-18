@@ -97,4 +97,5 @@ public class user {
                 ", part='" + part + '\'' +
                 '}';
     }
+
 }

@@ -60,7 +60,7 @@ public class DataControllers {
         try {
             infos = getAraays(ss);
         }catch (Exception e){
-            return new Message<Data_24hourMsg>(0,"参数异常",null);;
+            return new Message<Data_24hourMsg>(0,"参数异常",null);
         }
         switch ((String) info.get("Type")){
             case "1":               //24小时

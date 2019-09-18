@@ -5,9 +5,11 @@ import com.example.demo.Service.Data_24hourService;
 import com.example.demo.dao.*;
 import com.example.demo.domain.buoy;
 import com.example.demo.domain.buoy_Avg_24Hour;
+import com.example.demo.domain.user;
 import com.example.demo.response.DataMsg;
 import com.example.demo.response.Data_24hourMsg;
 import com.example.demo.response.Message;
+import com.example.demo.util.checkObject;
 import com.example.demo.util.userTokenUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -35,8 +37,8 @@ public class DemoApplicationTests {
 
 
     @Test
-    public void contextLoads(){
-        System.out.println(LocalDateTime.now().minusMinutes(10));
+    public void contextLoads() throws IllegalAccessException{
+        System.out.println(userTokenUtil.getToken("123456"));
     }
 
 

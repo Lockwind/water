@@ -35,7 +35,7 @@ public class dataTask {
     }
 
     @Async
-    @Scheduled(cron = "5 0/10 * * * ? ")
+    @Scheduled(cron = "2/10 * * * * ? ")
     public void set_24hour() {
         if (isDataNull == false) {
             if (data_24hourServiceservice.fistUpd()) {
@@ -61,4 +61,5 @@ public class dataTask {
             }
         }
     }
+
 }

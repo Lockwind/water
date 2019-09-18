@@ -43,9 +43,9 @@ public class userServiceImpl implements userService {
         user u = userdao.selectbyId(uid);
         if (u != null) {
             //比对密码
-            if (u.getUserPwd().equals(oldPwd)) {
+            if (userTokenUtil.getStr(u.getUserPwd()).equals(oldPwd)) {
                 //更新密码
-                if (userdao.updatepwd(new user(uid, newPwd)) > 0) {
+                if (userdao.updatepwd(new user(uid,userTokenUtil.getToken(newPwd))) > 0) {
                     return new Message<>(1, "success", null);
                 } else {
                     return new Message<>(0, "更改失败", null);
