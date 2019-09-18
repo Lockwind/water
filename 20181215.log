@@ -1208,3 +1208,6 @@ java.lang.NumberFormatException: null
 2019-09-18 04:10:26.612 DEBUG 15598 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
 2019-09-18 04:10:26.612 DEBUG 15598 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [Message{Code=0, Msg='查无数据', Date=null}]
 2019-09-18 04:10:26.614 DEBUG 15598 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2019-09-18 04:15:04.170  INFO 15598 --- [Thread-12] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-18 04:15:04.170  INFO 15598 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-09-18 04:15:04.175  INFO 15598 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
