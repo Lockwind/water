@@ -47,6 +47,19 @@ public class alertDeal {
         this.id = id;
     }
 
+    public String getTypeName(int type){
+        switch (type){
+            case 1:
+                return "值异常";
+            case 2:
+                return "值丢失";
+            case 3:
+                return "值无效";
+            default:
+                return null;
+        }
+    }
+
     public Integer getAlertId() {
         return alertId;
     }

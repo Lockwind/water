@@ -37,6 +37,19 @@ public class alert {
     public alert() {
     }
 
+    public String getTypeName(int type){
+        switch (type){
+            case 1:
+                return "值异常";
+            case 2:
+                return "值丢失";
+            case 3:
+                return "值无效";
+            default:
+                return null;
+        }
+    }
+
     public alert(LocalDateTime time, Integer type, String normal, String name, float unormal) {
         this.time = time;
         this.type = type;

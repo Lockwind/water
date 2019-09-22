@@ -7,4 +7,12 @@
         insert into alert_deal values (null ,#{alertId},#{username},#{type},#{normal}
         ,#{unormal},#{time},#{content});
     </insert>
+
+    <select id="selAlertDeal" resultType="alertDeal" parameterType="int">
+        select id,type,time from alert_deal order by id desc limit #{limit};
+    </select>
+
+    <select id="selById" resultType="alertDeal" parameterType="int">
+        select id, username, type, normal, unormal,time, content from alert_deal where id=#{id}
+    </select>
 </mapper>

@@ -1,9 +1,11 @@
 package com.example.demo.domain;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import org.apache.ibatis.type.Alias;
 
 import javax.validation.constraints.NotBlank;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @Alias("user")
 public class user {
     private Integer userId;
