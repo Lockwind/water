@@ -5,6 +5,7 @@ import com.example.demo.util.userTokenUtil;
 import com.google.gson.Gson;
 import org.apache.http.protocol.RequestContent;
 import org.apache.http.protocol.ResponseContent;
+import org.apache.juli.logging.Log;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.awt.*;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Logger;
 
 //拦截器 负责检查token
 @Component

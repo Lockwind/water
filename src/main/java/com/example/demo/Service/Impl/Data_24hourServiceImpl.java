@@ -59,9 +59,9 @@ public class Data_24hourServiceImpl implements Data_24hourService {
     @Override
     @Transactional
     public boolean saveData_24hour(DataMsg data) {
-        buoy buoy = data.getBuoy().get(0);
-        station station = data.getStation().get(0);
-        virulence virulence = data.getVirulence().get(0);
+        Buoy buoy = data.getBuoy().get(0);
+        Station station = data.getStation().get(0);
+        Virulence virulence = data.getVirulence().get(0);
         int _b = buoy_24hourDao.saveNewBuoy(buoy);
         int _s = stat_24hourDao.saveNewStat(station);
         int _v = viru_24hourDao.saveViru_24hour(virulence);

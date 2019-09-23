@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import java.time.LocalDateTime;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class buoy_Avg_3Day {
+public class Buoy_Avg_3Day {
     private Integer bId;                       //浮标数据id
     private LocalDateTime bTime;           //记录时间
     private Float b001;                     //酸碱度
@@ -32,10 +32,10 @@ public class buoy_Avg_3Day {
     private Float bA15;       //平均风速
     private Float bA16;   //平均风向
 
-    public buoy_Avg_3Day() {
+    public Buoy_Avg_3Day() {
     }
 
-    public buoy_Avg_3Day(Integer bId, LocalDateTime bTime, Float b001, Float b003, Float b010, Float b011, Float b015, Float b060, Float bA00, Float bA01, Float bA02, Float bA03, Float bA04, Float bA05, Float bA06, Float bA07, Float bA08, Float bA09, Float bA10, Float bA11, Float bA12, Float bA13, Float bA14, Float bA15, Float bA16) {
+    public Buoy_Avg_3Day(Integer bId, LocalDateTime bTime, Float b001, Float b003, Float b010, Float b011, Float b015, Float b060, Float bA00, Float bA01, Float bA02, Float bA03, Float bA04, Float bA05, Float bA06, Float bA07, Float bA08, Float bA09, Float bA10, Float bA11, Float bA12, Float bA13, Float bA14, Float bA15, Float bA16) {
         this.bId = bId;
         this.bTime = bTime;
         this.b001 = b001;
@@ -63,7 +63,7 @@ public class buoy_Avg_3Day {
         this.bA16 = bA16;
     }
 
-    public buoy_Avg_3Day(LocalDateTime bTime, Float b001, Float b003, Float b010, Float b011, Float b015, Float b060, Float bA00, Float bA01, Float bA02, Float bA03, Float bA04, Float bA05, Float bA06, Float bA07, Float bA08, Float bA09, Float bA10, Float bA11, Float bA12, Float bA13, Float bA14, Float bA15, Float bA16) {
+    public Buoy_Avg_3Day(LocalDateTime bTime, Float b001, Float b003, Float b010, Float b011, Float b015, Float b060, Float bA00, Float bA01, Float bA02, Float bA03, Float bA04, Float bA05, Float bA06, Float bA07, Float bA08, Float bA09, Float bA10, Float bA11, Float bA12, Float bA13, Float bA14, Float bA15, Float bA16) {
         this.bTime = bTime;
         this.b001 = b001;
         this.b003 = b003;

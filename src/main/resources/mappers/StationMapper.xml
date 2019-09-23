@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.dao.StationDao">
-    <resultMap id="StationResultMap" type="com.example.demo.domain.station">
+    <resultMap id="StationResultMap" type="com.example.demo.domain.Station">
         <id property="sId" column="id"/>
         <result property="s1" column="S1"/>
         <result property="s2" column="S2"/>
@@ -17,7 +17,7 @@
         <result property="sTime" column="time"/>
     </resultMap>
     <!--<select id="findB" resultMap="BuoyResultMap">
-         select * from buoy order by bId desc limit 1;
+         select * from Buoy order by bId desc limit 1;
     </select>-->
 
     <select id="findByNewTime" resultMap="StationResultMap" parameterType="java.time.LocalDateTime">

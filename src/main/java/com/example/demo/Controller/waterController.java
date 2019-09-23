@@ -1,7 +1,7 @@
 package com.example.demo.Controller;
 
 import com.example.demo.Service.userService;
-import com.example.demo.domain.user;
+import com.example.demo.domain.User;
 import com.example.demo.response.Message;
 import com.example.demo.response.loginMsg;
 import com.example.demo.util.checkObject;
@@ -22,7 +22,7 @@ public class waterController {
 
     @RequestMapping("/login")
     public Message<loginMsg> Login(String logininfo) throws IllegalAccessException{
-        user userinfo = new Gson().fromJson(logininfo, user.class);
+        User userinfo = new Gson().fromJson(logininfo, User.class);
         if (checkObject.check(userinfo,"userName","userPwd","deviceToken")){
             return userService.login(userinfo);
         }else{
@@ -66,7 +66,7 @@ public class waterController {
     }
 
     @RequestMapping("/list_users")
-    public Message<List<user>> list_users(String Token) {
+    public Message<List<User>> list_users(String Token) {
         int uId;
         if (!userTokenUtil.isTokenNull(Token)){
             return new Message<>(0,"参数异常",null);

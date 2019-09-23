@@ -5,21 +5,21 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import java.time.LocalDateTime;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class virulence_Avg_7Day {
+public class Virulence_Avg_7Day {
     private Integer vId;
     private Float vVirus;
     private LocalDateTime vTime;
 
-    public virulence_Avg_7Day() {
+    public Virulence_Avg_7Day() {
 
     }
 
-    public virulence_Avg_7Day(Float vVirus, LocalDateTime vTime) {
+    public Virulence_Avg_7Day(Float vVirus, LocalDateTime vTime) {
         this.vVirus = vVirus;
         this.vTime = vTime;
     }
 
-    public virulence_Avg_7Day(Integer vId, Float vVirus, LocalDateTime vTime) {
+    public Virulence_Avg_7Day(Integer vId, Float vVirus, LocalDateTime vTime) {
         this.vId = vId;
         this.vVirus = vVirus;
         this.vTime = vTime;
@@ -51,7 +51,7 @@ public class virulence_Avg_7Day {
 
     @Override
     public String toString() {
-        return "virulence{" +
+        return "Virulence{" +
                 "vId=" + vId +
                 ", vVirus=" + vVirus +
                 ", vTime=" + vTime +

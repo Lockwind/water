@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.dao.alertDealDao">
     <insert id="addAlertDeal" parameterType="alertDeal">
-        insert into alert_deal values (null ,#{alertId},#{username},#{type},#{normal}
+        insert into alert_deal values (null ,#{alertId.id},#{username},#{type},#{normal}
         ,#{unormal},#{time},#{content});
     </insert>
 

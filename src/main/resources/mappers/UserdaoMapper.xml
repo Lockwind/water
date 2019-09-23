@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.dao.Userdao">
-    <resultMap id="userResult" type="com.example.demo.domain.user">
+    <resultMap id="userResult" type="com.example.demo.domain.User">
         <id column="uId" property="userId"></id>
         <result column="uName" property="userName"></result>
         <result column="uPwd" property="userPwd"></result>

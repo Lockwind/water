@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.dao.Buoydao">
-    <resultMap id="BuoyResultMap" type="com.example.demo.domain.buoy">
+    <resultMap id="BuoyResultMap" type="com.example.demo.domain.Buoy">
         <id property="bId" column="id"/>
         <result property="bTime" column="time" javaType="java.time.LocalDateTime"/>
         <result property="b001" column="b001"/>

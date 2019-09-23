@@ -5,7 +5,7 @@ import org.apache.ibatis.type.Alias;
 import java.time.LocalDateTime;
 
 @Alias("alert")
-public class alert {
+public class Alert {
     private Integer id;
     private LocalDateTime time;
     private Integer type;
@@ -15,7 +15,7 @@ public class alert {
 
     @Override
     public String toString() {
-        return "alert{" +
+        return "Alert{" +
                 "id=" + id +
                 ", time=" + time +
                 ", type=" + type +
@@ -25,7 +25,7 @@ public class alert {
                 '}';
     }
 
-    public alert(Integer id, LocalDateTime time, Integer type, String normal, String name, float unormal) {
+    public Alert(Integer id, LocalDateTime time, Integer type, String normal, String name, float unormal) {
         this.id = id;
         this.time = time;
         this.type = type;
@@ -34,7 +34,7 @@ public class alert {
         this.unormal = unormal;
     }
 
-    public alert() {
+    public Alert() {
     }
 
     public String getTypeName(int type){
@@ -50,7 +50,7 @@ public class alert {
         }
     }
 
-    public alert(LocalDateTime time, Integer type, String normal, String name, float unormal) {
+    public Alert(LocalDateTime time, Integer type, String normal, String name, float unormal) {
         this.time = time;
         this.type = type;
         this.normal = normal;

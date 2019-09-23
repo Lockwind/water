@@ -1,13 +1,10 @@
 package com.example.demo.Service;
 
-import com.example.demo.domain.alert;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
+import com.example.demo.domain.Alert;
 
 
 public interface AlertService {
-    boolean saveAlert(alert alert);
+    boolean saveAlert(Alert alert);
 
-    alert selByAlert(alert alert);
+    Alert selByAlert(Alert alert);
 }

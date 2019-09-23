@@ -1,6 +1,6 @@
 package com.example.demo.dao;
 
-import com.example.demo.domain.station;
+import com.example.demo.domain.Station;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -11,6 +11,6 @@ import java.util.List;
 public interface StationDao {
 
     /*最新查询*/
-    List<station> findByNewTime(@Param("time") LocalDateTime oldtime);
+    List<Station> findByNewTime(@Param("time") LocalDateTime oldtime);
 
 }

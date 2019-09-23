@@ -7,7 +7,7 @@ import javax.validation.constraints.NotBlank;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Alias("user")
-public class user {
+public class User {
     private Integer userId;
     private String userName;
     private String userPwd;
@@ -15,15 +15,15 @@ public class user {
     private Integer pId;
     private String part;
 
-    public user() {
+    public User() {
     }
 
-    public user(Integer userId, String userPwd) {
+    public User(Integer userId, String userPwd) {
         this.userId = userId;
         this.userPwd = userPwd;
     }
 
-    public user(String userName, String userPwd, String deviceToken, Integer pId, String part) {
+    public User(String userName, String userPwd, String deviceToken, Integer pId, String part) {
         this.userName = userName;
         this.userPwd = userPwd;
         this.deviceToken = deviceToken;
@@ -31,7 +31,7 @@ public class user {
         this.part = part;
     }
 
-    public user(Integer userId, String userName, String userPwd, String deviceToken, Integer pId, String part) {
+    public User(Integer userId, String userName, String userPwd, String deviceToken, Integer pId, String part) {
         this.userId = userId;
         this.userName = userName;
         this.userPwd = userPwd;
@@ -90,7 +90,7 @@ public class user {
 
     @Override
     public String toString() {
-        return "user{" +
+        return "User{" +
                 "userId=" + userId +
                 ", userName='" + userName + '\'' +
                 ", userPwd='" + userPwd + '\'' +

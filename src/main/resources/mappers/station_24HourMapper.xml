@@ -7,7 +7,7 @@
     <sql id="colums">
       S1, S2, S3, S4, S5, S6, S7, S8, S9, time
     </sql>
-    <resultMap id="StationResultMap" type="com.example.demo.domain.station">
+    <resultMap id="StationResultMap" type="com.example.demo.domain.Station">
         <id property="sId" column="id"/>
         <result property="s1" column="S1"/>
         <result property="s2" column="S2"/>

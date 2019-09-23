@@ -5,9 +5,9 @@ import org.apache.ibatis.type.Alias;
 import java.time.LocalDateTime;
 
 @Alias("alertDeal")
-public class alertDeal {
+public class AlertDeal {
      private Integer id;
-     private Integer alertId;
+     private Alert alertId;
      private String username;
      private Integer type;
      private float normal;
@@ -15,10 +15,10 @@ public class alertDeal {
      private LocalDateTime time;
      private String content;
 
-    public alertDeal() {
+    public AlertDeal() {
     }
 
-    public alertDeal(Integer id, Integer alertId, String username, Integer type, float normal, float unormal, LocalDateTime time, String content) {
+    public AlertDeal(Integer id, Alert alertId, String username, Integer type, float normal, float unormal, LocalDateTime time, String content) {
         this.id = id;
         this.alertId = alertId;
         this.username = username;
@@ -29,7 +29,7 @@ public class alertDeal {
         this.content = content;
     }
 
-    public alertDeal(Integer alertId, String username, Integer type, float normal, float unormal, LocalDateTime time, String content) {
+    public AlertDeal(Alert alertId, String username, Integer type, float normal, float unormal, LocalDateTime time, String content) {
         this.alertId = alertId;
         this.username = username;
         this.type = type;
@@ -60,11 +60,11 @@ public class alertDeal {
         }
     }
 
-    public Integer getAlertId() {
+    public Alert getAlertId() {
         return alertId;
     }
 
-    public void setAlertId(Integer alertId) {
+    public void setAlertId(Alert alertId) {
         this.alertId = alertId;
     }
 

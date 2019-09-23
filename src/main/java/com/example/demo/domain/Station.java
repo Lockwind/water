@@ -1,28 +1,51 @@
 package com.example.demo.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import org.apache.ibatis.type.Alias;
 
 import java.time.LocalDateTime;
 
+@Alias("stat")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class station_Avg_7Day {
+public class Station {
     private Integer sId;
-    private Float s1;
-    private Float s2;
-    private Float s3;
-    private Float s4;
-    private Float s5;
-    private Float s6;
-    private Float s7;
-    private Float s8;
-    private Float s9;
+    private Float  s1;
+    private Float  s2;
+    private Float  s3;
+    private Float  s4;
+    private Float  s5;
+    private Float  s6;
+    private Float  s7;
+    private Float  s8;
+    private Float  s9;
     private LocalDateTime sTime;
 
-    public station_Avg_7Day() {
-
+    @Override
+    public String toString() {
+        return "Station{" +
+                "sId=" + sId +
+                ", s1=" + s1 +
+                ", s2=" + s2 +
+                ", s3=" + s3 +
+                ", s4=" + s4 +
+                ", s5=" + s5 +
+                ", s6=" + s6 +
+                ", s7=" + s7 +
+                ", s8=" + s8 +
+                ", s9=" + s9 +
+                ", sTime=" + sTime +
+                '}';
     }
 
-    public station_Avg_7Day(Integer sId, Float s1, Float s2, Float s3, Float s4, Float s5, Float s6, Float s7, Float s8, Float s9, LocalDateTime sTime) {
+    public Station() {
+    }
+
+    public Station(LocalDateTime sTime) {
+        this.sTime = sTime;
+    }
+
+    public Station(Integer sId, Float s1, Float s2, Float s3, Float s4, Float s5, Float s6, Float s7, Float s8, Float s9, LocalDateTime sTime) {
         this.sId = sId;
         this.s1 = s1;
         this.s2 = s2;
@@ -36,7 +59,7 @@ public class station_Avg_7Day {
         this.sTime = sTime;
     }
 
-    public station_Avg_7Day(Float s1, Float s2, Float s3, Float s4, Float s5, Float s6, Float s7, Float s8, Float s9, LocalDateTime sTime) {
+    public Station(Float s1, Float s2, Float s3, Float s4, Float s5, Float s6, Float s7, Float s8, Float s9, LocalDateTime sTime) {
         this.s1 = s1;
         this.s2 = s2;
         this.s3 = s3;

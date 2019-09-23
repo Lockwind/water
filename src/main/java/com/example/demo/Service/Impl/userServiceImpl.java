@@ -2,7 +2,7 @@ package com.example.demo.Service.Impl;
 
 import com.example.demo.Service.userService;
 import com.example.demo.dao.Userdao;
-import com.example.demo.domain.user;
+import com.example.demo.domain.User;
 import com.example.demo.response.Message;
 import com.example.demo.response.loginMsg;
 import com.example.demo.util.userTokenUtil;
@@ -19,9 +19,9 @@ public class userServiceImpl implements userService {
 
 
     @Override
-    public Message<loginMsg> login(user webuser) {
+    public Message<loginMsg> login(User webuser) {
         //按名字查用户
-        user user = userdao.selectbyName(webuser.getUserName());
+        User user = userdao.selectbyName(webuser.getUserName());
         if (user != null) {
             //将logininfo中密码与数据库密码进行比对
             if (userTokenUtil.getStr(user.getUserPwd()).equals(webuser.getUserPwd())) {
@@ -40,12 +40,12 @@ public class userServiceImpl implements userService {
 
     @Override
     public Message<loginMsg> updatepwd(Integer uid, String oldPwd, String newPwd) {
-        user u = userdao.selectbyId(uid);
+        User u = userdao.selectbyId(uid);
         if (u != null) {
             //比对密码
             if (userTokenUtil.getStr(u.getUserPwd()).equals(oldPwd)) {
                 //更新密码
-                if (userdao.updatepwd(new user(uid,userTokenUtil.getToken(newPwd))) > 0) {
+                if (userdao.updatepwd(new User(uid,userTokenUtil.getToken(newPwd))) > 0) {
                     return new Message<>(1, "success", null);
                 } else {
                     return new Message<>(0, "更改失败", null);
@@ -59,13 +59,13 @@ public class userServiceImpl implements userService {
     }
 
     @Override
-    public Message<List<user>> selectAll(Integer uId) {
-        user user = userdao.selectbyId(uId);
+    public Message<List<User>> selectAll(Integer uId) {
+        User user = userdao.selectbyId(uId);
         if (user != null) {
             //比对用户身份
             if (user.getPart().equals("root") || user.getPart().equals("admin")) {
                 //返回所有用户
-                return new Message<List<com.example.demo.domain.user>>(1, "success", userdao.selectAll());
+                return new Message<List<User>>(1, "success", userdao.selectAll());
             } else {
                 return new Message<>(0, "无权访问", null);
             }

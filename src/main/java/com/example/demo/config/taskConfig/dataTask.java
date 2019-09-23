@@ -2,8 +2,6 @@ package com.example.demo.config.taskConfig;
 
 import com.example.demo.Service.DataService;
 import com.example.demo.Service.Data_24hourService;
-import com.example.demo.dao.Buoydao;
-import com.example.demo.domain.buoy;
 import com.example.demo.response.DataMsg;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;

@@ -1,16 +1,14 @@
 package com.example.demo.domain;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.apache.ibatis.type.Alias;
 
-import java.io.BufferedOutputStream;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-@Alias("Buoy")
+@Alias("buoy")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class buoy implements Comparable<buoy> {
+public class Buoy implements Comparable<Buoy> {
     private Integer bId;                       //浮标数据id
     private LocalDateTime bTime;           //记录时间
     private Float b001;                     //酸碱度
@@ -37,11 +35,11 @@ public class buoy implements Comparable<buoy> {
     private Float bA15;       //平均风速
     private Float bA16;   //平均风向
 
-    public buoy() {
+    public Buoy() {
 
     }
 
-    public buoy(LocalDateTime bTime) {
+    public Buoy(LocalDateTime bTime) {
         this.bTime = bTime;
     }
 
@@ -52,7 +50,7 @@ public class buoy implements Comparable<buoy> {
 
     @Override
     public String toString() {
-        return "buoy{" +
+        return "Buoy{" +
                 "bId=" + bId +
                 ", bTime=" + bTime +
                 ", b001=" + b001 +
@@ -81,7 +79,7 @@ public class buoy implements Comparable<buoy> {
                 '}';
     }
 
-    public buoy(Integer bId, LocalDateTime bTime, Float b001, Float b003, Float b010, Float b011, Float b015, Float b060, Float bA00, Float bA01, Float bA02, Float bA03, Float bA04, Float bA05, Float bA06, Float bA07, Float bA08, Float bA09, Float bA10, Float bA11, Float bA12, Float bA13, Float bA14, Float bA15, Float bA16) {
+    public Buoy(Integer bId, LocalDateTime bTime, Float b001, Float b003, Float b010, Float b011, Float b015, Float b060, Float bA00, Float bA01, Float bA02, Float bA03, Float bA04, Float bA05, Float bA06, Float bA07, Float bA08, Float bA09, Float bA10, Float bA11, Float bA12, Float bA13, Float bA14, Float bA15, Float bA16) {
         this.bId = bId;
         this.bTime = bTime;
         this.b001 = b001;
@@ -109,7 +107,7 @@ public class buoy implements Comparable<buoy> {
         this.bA16 = bA16;
     }
 
-    public buoy(LocalDateTime bTime, Float b001, Float b003, Float b010, Float b011, Float b015, Float b060, Float bA00, Float bA01, Float bA02, Float bA03, Float bA04, Float bA05, Float bA06, Float bA07, Float bA08, Float bA09, Float bA10, Float bA11, Float bA12, Float bA13, Float bA14, Float bA15, Float bA16) {
+    public Buoy(LocalDateTime bTime, Float b001, Float b003, Float b010, Float b011, Float b015, Float b060, Float bA00, Float bA01, Float bA02, Float bA03, Float bA04, Float bA05, Float bA06, Float bA07, Float bA08, Float bA09, Float bA10, Float bA11, Float bA12, Float bA13, Float bA14, Float bA15, Float bA16) {
         this.bTime = bTime;
         this.b001 = b001;
         this.b003 = b003;
@@ -338,7 +336,7 @@ public class buoy implements Comparable<buoy> {
     }
 
     @Override
-    public int compareTo(buoy o) {
+    public int compareTo(Buoy o) {
         return o.getbTime().compareTo(this.bTime);
     }
 }

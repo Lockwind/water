@@ -4,11 +4,10 @@ import com.example.demo.Service.DataService;
 import com.example.demo.dao.Buoydao;
 import com.example.demo.dao.StationDao;
 import com.example.demo.dao.VirulenceDao;
-import com.example.demo.domain.buoy;
-import com.example.demo.domain.station;
-import com.example.demo.domain.virulence;
+import com.example.demo.domain.Buoy;
+import com.example.demo.domain.Station;
+import com.example.demo.domain.Virulence;
 import com.example.demo.response.DataMsg;
-import com.example.demo.response.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,11 +30,11 @@ public class DataServiceImpl implements DataService {
     @Override
     @Transactional
     public DataMsg findByNewTime() {
-        List<buoy> newbuoy = buoydao.findByNewTime(oldtime);
+        List<Buoy> newbuoy = buoydao.findByNewTime(oldtime);
         if (!newbuoy.isEmpty()) {
-            List<station> newstation = stationDao.findByNewTime(oldtime);
+            List<Station> newstation = stationDao.findByNewTime(oldtime);
             if (!newstation.isEmpty()) {
-                List<virulence> newvirul = virulenceDao.findByNewTime(oldtime);
+                List<Virulence> newvirul = virulenceDao.findByNewTime(oldtime);
                 if (!newvirul.isEmpty()) {
                     oldtime=newbuoy.get(0).getbTime();
                     DataMsg data = new DataMsg();

@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import java.time.LocalDateTime;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class station_Avg_3Day {
+public class Station_Avg_7Day {
     private Integer sId;
     private Float s1;
     private Float s2;
@@ -18,11 +18,11 @@ public class station_Avg_3Day {
     private Float s9;
     private LocalDateTime sTime;
 
-    public station_Avg_3Day() {
+    public Station_Avg_7Day() {
 
     }
 
-    public station_Avg_3Day(Integer sId, Float s1, Float s2, Float s3, Float s4, Float s5, Float s6, Float s7, Float s8, Float s9, LocalDateTime sTime) {
+    public Station_Avg_7Day(Integer sId, Float s1, Float s2, Float s3, Float s4, Float s5, Float s6, Float s7, Float s8, Float s9, LocalDateTime sTime) {
         this.sId = sId;
         this.s1 = s1;
         this.s2 = s2;
@@ -36,7 +36,7 @@ public class station_Avg_3Day {
         this.sTime = sTime;
     }
 
-    public station_Avg_3Day(Float s1, Float s2, Float s3, Float s4, Float s5, Float s6, Float s7, Float s8, Float s9, LocalDateTime sTime) {
+    public Station_Avg_7Day(Float s1, Float s2, Float s3, Float s4, Float s5, Float s6, Float s7, Float s8, Float s9, LocalDateTime sTime) {
         this.s1 = s1;
         this.s2 = s2;
         this.s3 = s3;

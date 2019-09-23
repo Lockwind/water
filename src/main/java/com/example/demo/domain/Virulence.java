@@ -1,25 +1,30 @@
 package com.example.demo.domain;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import org.apache.ibatis.type.Alias;
 
 import java.time.LocalDateTime;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class virulence_Avg_24Hour {
+@Alias("viru")
+public class Virulence {
     private Integer vId;
     private Float vVirus;
     private LocalDateTime vTime;
 
-    public virulence_Avg_24Hour() {
-
+    public Virulence(LocalDateTime vTime) {
+        this.vTime = vTime;
     }
 
-    public virulence_Avg_24Hour(Float vVirus, LocalDateTime vTime) {
+    public Virulence() {
+    }
+
+    public Virulence(Float vVirus, LocalDateTime vTime) {
         this.vVirus = vVirus;
         this.vTime = vTime;
     }
 
-    public virulence_Avg_24Hour(Integer vId, Float vVirus, LocalDateTime vTime) {
+    public Virulence(Integer vId, Float vVirus, LocalDateTime vTime) {
         this.vId = vId;
         this.vVirus = vVirus;
         this.vTime = vTime;
@@ -51,7 +56,7 @@ public class virulence_Avg_24Hour {
 
     @Override
     public String toString() {
-        return "virulence{" +
+        return "Virulence{" +
                 "vId=" + vId +
                 ", vVirus=" + vVirus +
                 ", vTime=" + vTime +

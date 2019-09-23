@@ -1,6 +1,6 @@
 package com.example.demo.dao;
 
-import com.example.demo.domain.user;
+import com.example.demo.domain.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -8,11 +8,11 @@ import java.util.List;
 
 @Mapper
 public interface Userdao {
-    user selectbyName(@Param("uName") String uName);
+    User selectbyName(@Param("uName") String uName);
 
-    user selectbyId(@Param("uId") int uId);
+    User selectbyId(@Param("uId") int uId);
 
-    int updatepwd(user user);
+    int updatepwd(User user);
 
-    List<user> selectAll();
+    List<User> selectAll();
 }
